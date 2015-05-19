@@ -4,8 +4,8 @@
 //
 //
 
-#ifndef libPhoneNumber_NBPhoneNumberDefines_h
-#define libPhoneNumber_NBPhoneNumberDefines_h
+#ifndef libPhoneNumber_RingcNBPhoneNumberDefines_h
+#define libPhoneNumber_RingcNBPhoneNumberDefines_h
 
 #define NB_YES [NSNumber numberWithBool:YES]
 #define NB_NO [NSNumber numberWithBool:NO]

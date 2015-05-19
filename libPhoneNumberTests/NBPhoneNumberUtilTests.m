@@ -6,40 +6,40 @@
 
 #import "NBPhoneNumberUtilTests.h"
 
-#import "NBMetadataHelper.h"
-#import "NBPhoneMetaData.h"
-#import "NBPhoneNumber.h"
-#import "NBPhoneNumberDesc.h"
-#import "NBPhoneNumberUtil.h"
-#import "NBNumberFormat.h"
+#import "RingcNBMetadataHelper.h"
+#import "RingcNBPhoneMetaData.h"
+#import "RingcNBPhoneNumber.h"
+#import "RingcNBPhoneNumberDesc.h"
+#import "RingcNBPhoneNumberUtil.h"
+#import "RingcNBNumberFormat.h"
 
 
-@interface NBPhoneNumberUtil (FOR_UNIT_TEST)
+@interface RingcNBPhoneNumberUtil (FOR_UNIT_TEST)
 
-- (BOOL)canBeInternationallyDialled:(NBPhoneNumber*)number;
-- (BOOL)truncateTooLongNumber:(NBPhoneNumber*)number;
-- (NBEValidationResult)isPossibleNumberWithReason:(NBPhoneNumber*)number;
-- (BOOL)isPossibleNumber:(NBPhoneNumber*)number;
+- (BOOL)canBeInternationallyDialled:(RingcNBPhoneNumber*)number;
+- (BOOL)truncateTooLongNumber:(RingcNBPhoneNumber*)number;
+- (NBEValidationResult)isPossibleNumberWithReason:(RingcNBPhoneNumber*)number;
+- (BOOL)isPossibleNumber:(RingcNBPhoneNumber*)number;
 - (NBEMatchType)isNumberMatch:(id)firstNumberIn second:(id)secondNumberIn;
-- (int)getLengthOfGeographicalAreaCode:(NBPhoneNumber*)phoneNumber;
-- (int)getLengthOfNationalDestinationCode:(NBPhoneNumber*)phoneNumber;
-- (BOOL)maybeStripNationalPrefixAndCarrierCode:(NSString**)numberStr metadata:(NBPhoneMetaData*)metadata carrierCode:(NSString**)carrierCode;
+- (int)getLengthOfGeographicalAreaCode:(RingcNBPhoneNumber*)phoneNumber;
+- (int)getLengthOfNationalDestinationCode:(RingcNBPhoneNumber*)phoneNumber;
+- (BOOL)maybeStripNationalPrefixAndCarrierCode:(NSString**)numberStr metadata:(RingcNBPhoneMetaData*)metadata carrierCode:(NSString**)carrierCode;
 - (NBECountryCodeSource)maybeStripInternationalPrefixAndNormalize:(NSString**)numberStr possibleIddPrefix:(NSString*)possibleIddPrefix;
-- (NSString*)format:(NBPhoneNumber*)phoneNumber numberFormat:(NBEPhoneNumberFormat)numberFormat;
-- (NSString*)formatByPattern:(NBPhoneNumber*)number numberFormat:(NBEPhoneNumberFormat)numberFormat userDefinedFormats:(NSArray*)userDefinedFormats;
-- (NSString*)formatNumberForMobileDialing:(NBPhoneNumber*)number regionCallingFrom:(NSString*)regionCallingFrom withFormatting:(BOOL)withFormatting;
-- (NSString*)formatOutOfCountryCallingNumber:(NBPhoneNumber*)number regionCallingFrom:(NSString*)regionCallingFrom;
-- (NSString*)formatOutOfCountryKeepingAlphaChars:(NBPhoneNumber*)number regionCallingFrom:(NSString*)regionCallingFrom;
-- (NSString*)formatNationalNumberWithCarrierCode:(NBPhoneNumber*)number carrierCode:(NSString*)carrierCode;
-- (NSString*)formatInOriginalFormat:(NBPhoneNumber*)number regionCallingFrom:(NSString*)regionCallingFrom;
-- (NSString*)formatNationalNumberWithPreferredCarrierCode:(NBPhoneNumber*)number fallbackCarrierCode:(NSString*)fallbackCarrierCode;
+- (NSString*)format:(RingcNBPhoneNumber*)phoneNumber numberFormat:(NBEPhoneNumberFormat)numberFormat;
+- (NSString*)formatByPattern:(RingcNBPhoneNumber*)number numberFormat:(NBEPhoneNumberFormat)numberFormat userDefinedFormats:(NSArray*)userDefinedFormats;
+- (NSString*)formatNumberForMobileDialing:(RingcNBPhoneNumber*)number regionCallingFrom:(NSString*)regionCallingFrom withFormatting:(BOOL)withFormatting;
+- (NSString*)formatOutOfCountryCallingNumber:(RingcNBPhoneNumber*)number regionCallingFrom:(NSString*)regionCallingFrom;
+- (NSString*)formatOutOfCountryKeepingAlphaChars:(RingcNBPhoneNumber*)number regionCallingFrom:(NSString*)regionCallingFrom;
+- (NSString*)formatNationalNumberWithCarrierCode:(RingcNBPhoneNumber*)number carrierCode:(NSString*)carrierCode;
+- (NSString*)formatInOriginalFormat:(RingcNBPhoneNumber*)number regionCallingFrom:(NSString*)regionCallingFrom;
+- (NSString*)formatNationalNumberWithPreferredCarrierCode:(RingcNBPhoneNumber*)number fallbackCarrierCode:(NSString*)fallbackCarrierCode;
 
 @end
 
 
 @interface NBPhoneNumberUtilTests ()
 
-@property (nonatomic, strong) NBPhoneNumberUtil *aUtil;
+@property (nonatomic, strong) RingcNBPhoneNumberUtil *aUtil;
 
 @end
 
@@ -50,9 +50,9 @@
 {
     [super setUp];
     
-    [NBMetadataHelper setTestMode:YES];
+    [RingcNBMetadataHelper setTestMode:YES];
     
-    _aUtil = [[NBPhoneNumberUtil alloc] init];
+    _aUtil = [[RingcNBPhoneNumberUtil alloc] init];
 }
 
 - (void)tearDown
@@ -88,23 +88,23 @@
 - (NSString *)getPhoneNumberFormatted:(NSString *)phoneNumber
 {
     NSString *retValue;
-    NBPhoneNumber *phoneNumberFormatted = [_aUtil parseWithPhoneCarrierRegion:phoneNumber error:nil];
+    RingcNBPhoneNumber *phoneNumberFormatted = [_aUtil parseWithPhoneCarrierRegion:phoneNumber error:nil];
     retValue = [_aUtil format:phoneNumberFormatted numberFormat:NBEPhoneNumberFormatRFC3966 error:nil];
     return retValue;
 }
 
 - (void)testForExtraDatas
 {
-    [NBMetadataHelper setTestMode:NO];
+    [RingcNBMetadataHelper setTestMode:NO];
     
-    NSArray *arrayData = [NBMetadataHelper getAllMetadata];
+    NSArray *arrayData = [RingcNBMetadataHelper getAllMetadata];
     if (arrayData && arrayData.count > 0) {
         NSLog(@"Log sample metadata [%@]", [arrayData firstObject]);
     } else {
         XCTFail(@"Fail to extract meta data");
     }
     
-    [NBMetadataHelper setTestMode:YES];
+    [RingcNBMetadataHelper setTestMode:YES];
 }
 
 - (void)testCarrierRegion
@@ -115,7 +115,7 @@
 // FIXME: This unit test ALWAYS FAIL ... until google libPhoneNumber fix this issue
 - (void)testAustriaNationalNumberParsing
 {
-    [NBMetadataHelper setTestMode:NO];
+    [RingcNBMetadataHelper setTestMode:NO];
     
     NSError *anError = nil;
     
@@ -123,21 +123,21 @@
     NSString *nationalNumberForExpect = @"6606545646";
     NSString *defaultRegion = @"AT";
     
-    NBPhoneNumber *phoneNumber = [_aUtil parse:internationalNumberForInput defaultRegion:defaultRegion error:&anError];
+    RingcNBPhoneNumber *phoneNumber = [_aUtil parse:internationalNumberForInput defaultRegion:defaultRegion error:&anError];
     NSString *nationalNumberForActual = [NSString stringWithFormat:@"%@", phoneNumber.nationalNumber];
     
     // ALWAYS FAIL need fix "google libPhoneNumber"
     XCTAssertEqualObjects(nationalNumberForExpect, nationalNumberForActual);
     
-    [NBMetadataHelper setTestMode:YES];
+    [RingcNBMetadataHelper setTestMode:YES];
 }
 
 - (void)testForiOS7
 {
-    [NBMetadataHelper setTestMode:NO];
+    [RingcNBMetadataHelper setTestMode:NO];
     
     NSError *anError = nil;
-    NBPhoneNumber *myNumber = [_aUtil parse:@"0174 2340XXX" defaultRegion:@"DE" error:&anError];
+    RingcNBPhoneNumber *myNumber = [_aUtil parse:@"0174 2340XXX" defaultRegion:@"DE" error:&anError];
     if (anError == nil) {
         NSLog(@"isValidPhoneNumber ? [%@]", [_aUtil isValidNumber:myNumber] ? @"YES":@"NO");
         NSLog(@"E164          : %@", [_aUtil format:myNumber numberFormat:NBEPhoneNumberFormatE164 error:&anError]);
@@ -148,30 +148,30 @@
         NSLog(@"Error : %@", [anError localizedDescription]);
     }
     
-    [NBMetadataHelper setTestMode:YES];
+    [RingcNBMetadataHelper setTestMode:YES];
 }
 
 - (void)testForGetMetadataForRegionTwice
 {
-    [NBMetadataHelper getMetadataForRegion:@"US"];
-    [NBMetadataHelper getMetadataForRegion:@"KR"];
-    [NBMetadataHelper getMetadataForRegion:nil];
-    [NBMetadataHelper getMetadataForRegion:NULL];
-    [NBMetadataHelper getMetadataForRegion:@""];
-    [NBMetadataHelper getMetadataForRegion:0];
-    [NBMetadataHelper getMetadataForRegion:@" AU"];
-    [NBMetadataHelper getMetadataForRegion:@" JP        "];
+    [RingcNBMetadataHelper getMetadataForRegion:@"US"];
+    [RingcNBMetadataHelper getMetadataForRegion:@"KR"];
+    [RingcNBMetadataHelper getMetadataForRegion:nil];
+    [RingcNBMetadataHelper getMetadataForRegion:NULL];
+    [RingcNBMetadataHelper getMetadataForRegion:@""];
+    [RingcNBMetadataHelper getMetadataForRegion:0];
+    [RingcNBMetadataHelper getMetadataForRegion:@" AU"];
+    [RingcNBMetadataHelper getMetadataForRegion:@" JP        "];
 }
 
 - (void)testNSDictionaryalbeKey
 {
     NSError *anError = nil;
 
-    NBPhoneNumber *myNumber1 = [_aUtil parse:@"971600123456" defaultRegion:@"AE" error:&anError];
-    NBPhoneNumber *myNumber2 = [_aUtil parse:@"5491187654321" defaultRegion:@"AR" error:&anError];
-    NBPhoneNumber *myNumber3 = [_aUtil parse:@"12423570000" defaultRegion:@"BS" error:&anError];
-    NBPhoneNumber *myNumber4 = [_aUtil parse:@"39236618300" defaultRegion:@"IT" error:&anError];
-    NBPhoneNumber *myNumber5 = [_aUtil parse:@"16502530000" defaultRegion:@"US" error:&anError];
+    RingcNBPhoneNumber *myNumber1 = [_aUtil parse:@"971600123456" defaultRegion:@"AE" error:&anError];
+    RingcNBPhoneNumber *myNumber2 = [_aUtil parse:@"5491187654321" defaultRegion:@"AR" error:&anError];
+    RingcNBPhoneNumber *myNumber3 = [_aUtil parse:@"12423570000" defaultRegion:@"BS" error:&anError];
+    RingcNBPhoneNumber *myNumber4 = [_aUtil parse:@"39236618300" defaultRegion:@"IT" error:&anError];
+    RingcNBPhoneNumber *myNumber5 = [_aUtil parse:@"16502530000" defaultRegion:@"US" error:&anError];
     
     NSMutableDictionary *dicTest = [[NSMutableDictionary alloc] init];
     [dicTest setObject:@"AE" forKey:myNumber1];
@@ -195,8 +195,8 @@
     
     NSError *anError = nil;
 
-    [NBMetadataHelper setTestMode:NO];
-    NBPhoneNumber *myNumber = [_aUtil parse:@"6766077303" defaultRegion:@"AT" error:&anError];
+    [RingcNBMetadataHelper setTestMode:NO];
+    RingcNBPhoneNumber *myNumber = [_aUtil parse:@"6766077303" defaultRegion:@"AT" error:&anError];
     if (anError == nil)
     {
         NSLog(@"isValidPhoneNumber ? [%@]", [_aUtil isValidNumber:myNumber] ? @"YES":@"NO");
@@ -215,7 +215,7 @@
     NSNumber *dRes = [_aUtil extractCountryCode:@"823213123123" nationalNumber:&res];
     NSLog (@"extractCountryCode [%@] [%@]", dRes, res);
     
-    [NBMetadataHelper setTestMode:YES];
+    [RingcNBMetadataHelper setTestMode:YES];
 }
 
 
@@ -227,125 +227,125 @@
     // TODO: Rewrite this as static functions that return new numbers each time to
     // avoid any risk of accidental changes to mutable static state affecting many
     // tests.
-    NBPhoneNumber *ALPHA_NUMERIC_NUMBER = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *ALPHA_NUMERIC_NUMBER = [[RingcNBPhoneNumber alloc] init];
     ALPHA_NUMERIC_NUMBER.countryCode = @1;
     ALPHA_NUMERIC_NUMBER.nationalNumber = @80074935247;
     
-    NBPhoneNumber *AE_UAN = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *AE_UAN = [[RingcNBPhoneNumber alloc] init];
     AE_UAN.countryCode = @971;
     AE_UAN.nationalNumber = @600123456;
     
-    NBPhoneNumber *AR_MOBILE = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *AR_MOBILE = [[RingcNBPhoneNumber alloc] init];
     AR_MOBILE.countryCode = @54;
     AR_MOBILE.nationalNumber = @91187654321;
     
-    NBPhoneNumber *AR_NUMBER = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *AR_NUMBER = [[RingcNBPhoneNumber alloc] init];
     AR_NUMBER.countryCode = @54;
     AR_NUMBER.nationalNumber = @1187654321;
     
-    NBPhoneNumber *AU_NUMBER = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *AU_NUMBER = [[RingcNBPhoneNumber alloc] init];
     AU_NUMBER.countryCode = @61;
     AU_NUMBER.nationalNumber = @236618300;
     
-    NBPhoneNumber *BS_MOBILE = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *BS_MOBILE = [[RingcNBPhoneNumber alloc] init];
     BS_MOBILE.countryCode = @1;
     BS_MOBILE.nationalNumber = @2423570000;
     
-    NBPhoneNumber *BS_NUMBER = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *BS_NUMBER = [[RingcNBPhoneNumber alloc] init];
     BS_NUMBER.countryCode = @1;
     BS_NUMBER.nationalNumber = @2423651234;
     
     // Note that this is the same as the example number for DE in the metadata.
-    NBPhoneNumber *DE_NUMBER = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *DE_NUMBER = [[RingcNBPhoneNumber alloc] init];
     DE_NUMBER.countryCode = @49;
     DE_NUMBER.nationalNumber = @30123456;
     
-    NBPhoneNumber *DE_SHORT_NUMBER = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *DE_SHORT_NUMBER = [[RingcNBPhoneNumber alloc] init];
     DE_SHORT_NUMBER.countryCode = @49;
     DE_SHORT_NUMBER.nationalNumber = @1234;
     
-    NBPhoneNumber *GB_MOBILE = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *GB_MOBILE = [[RingcNBPhoneNumber alloc] init];
     GB_MOBILE.countryCode = @44;
     GB_MOBILE.nationalNumber = @7912345678;
     
-    NBPhoneNumber *GB_NUMBER = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *GB_NUMBER = [[RingcNBPhoneNumber alloc] init];
     GB_NUMBER.countryCode = @44;
     GB_NUMBER.nationalNumber = @2070313000;
     
-    NBPhoneNumber *IT_MOBILE = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *IT_MOBILE = [[RingcNBPhoneNumber alloc] init];
     IT_MOBILE.countryCode = @39;
     IT_MOBILE.nationalNumber = @345678901;
     
-    NBPhoneNumber *IT_NUMBER = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *IT_NUMBER = [[RingcNBPhoneNumber alloc] init];
     IT_NUMBER.countryCode = @39;
     IT_NUMBER.nationalNumber = @236618300;
     IT_NUMBER.italianLeadingZero = YES;
     
-    NBPhoneNumber *JP_STAR_NUMBER = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *JP_STAR_NUMBER = [[RingcNBPhoneNumber alloc] init];
     JP_STAR_NUMBER.countryCode = @81;
     JP_STAR_NUMBER.nationalNumber = @2345;
     
     // Numbers to test the formatting rules from Mexico.
-    NBPhoneNumber *MX_MOBILE1 = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *MX_MOBILE1 = [[RingcNBPhoneNumber alloc] init];
     MX_MOBILE1.countryCode = @52;
     MX_MOBILE1.nationalNumber = @12345678900;
     
-    NBPhoneNumber *MX_MOBILE2 = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *MX_MOBILE2 = [[RingcNBPhoneNumber alloc] init];
     MX_MOBILE2.countryCode = @52;
     MX_MOBILE2.nationalNumber = @15512345678;
     
-    NBPhoneNumber *MX_NUMBER1 = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *MX_NUMBER1 = [[RingcNBPhoneNumber alloc] init];
     MX_NUMBER1.countryCode = @52;
     MX_NUMBER1.nationalNumber = @3312345678;
     
-    NBPhoneNumber *MX_NUMBER2 = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *MX_NUMBER2 = [[RingcNBPhoneNumber alloc] init];
     MX_NUMBER2.countryCode = @52;
     MX_NUMBER2.nationalNumber = @8211234567;
     
-    NBPhoneNumber *NZ_NUMBER = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *NZ_NUMBER = [[RingcNBPhoneNumber alloc] init];
     NZ_NUMBER.countryCode = @64;
     NZ_NUMBER.nationalNumber = @33316005;
     
-    NBPhoneNumber *SG_NUMBER = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *SG_NUMBER = [[RingcNBPhoneNumber alloc] init];
     SG_NUMBER.countryCode = @65;
     SG_NUMBER.nationalNumber = @65218000;
     
     // A too-long and hence invalid US number.
-    NBPhoneNumber *US_LONG_NUMBER = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *US_LONG_NUMBER = [[RingcNBPhoneNumber alloc] init];
     US_LONG_NUMBER.countryCode = @1;
     US_LONG_NUMBER.nationalNumber = @65025300001;
     
-    NBPhoneNumber *US_NUMBER = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *US_NUMBER = [[RingcNBPhoneNumber alloc] init];
     US_NUMBER.countryCode = @1;
     US_NUMBER.nationalNumber = @6502530000;
     
-    NBPhoneNumber *US_PREMIUM = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *US_PREMIUM = [[RingcNBPhoneNumber alloc] init];
     US_PREMIUM.countryCode = @1;
     US_PREMIUM.nationalNumber = @9002530000;
     
     // Too short, but still possible US numbers.
-    NBPhoneNumber *US_LOCAL_NUMBER = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *US_LOCAL_NUMBER = [[RingcNBPhoneNumber alloc] init];
     US_LOCAL_NUMBER.countryCode = @1;
     US_LOCAL_NUMBER.nationalNumber = @2530000;
     
-    NBPhoneNumber *US_SHORT_BY_ONE_NUMBER = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *US_SHORT_BY_ONE_NUMBER = [[RingcNBPhoneNumber alloc] init];
     US_SHORT_BY_ONE_NUMBER.countryCode = @1;
     US_SHORT_BY_ONE_NUMBER.nationalNumber = @650253000;
     
-    NBPhoneNumber *US_TOLLFREE = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *US_TOLLFREE = [[RingcNBPhoneNumber alloc] init];
     US_TOLLFREE.countryCode = @1;
     US_TOLLFREE.nationalNumber = @8002530000;
     
-    NBPhoneNumber *US_SPOOF = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *US_SPOOF = [[RingcNBPhoneNumber alloc] init];
     US_SPOOF.countryCode = @1;
     US_SPOOF.nationalNumber = @0;
     
-    NBPhoneNumber *US_SPOOF_WITH_RAW_INPUT = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *US_SPOOF_WITH_RAW_INPUT = [[RingcNBPhoneNumber alloc] init];
     US_SPOOF_WITH_RAW_INPUT.countryCode = @1;
     US_SPOOF_WITH_RAW_INPUT.nationalNumber = @0;
     US_SPOOF_WITH_RAW_INPUT.rawInput = @"000-000-0000";
     
-    NBPhoneNumber *INTERNATIONAL_TOLL_FREE = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *INTERNATIONAL_TOLL_FREE = [[RingcNBPhoneNumber alloc] init];
     INTERNATIONAL_TOLL_FREE.countryCode = @800;
     INTERNATIONAL_TOLL_FREE.nationalNumber = @12345678;
     
@@ -353,30 +353,30 @@
     // country prefix that we have in our test metadata. However, this is not
     // considered valid because they differ in their country calling code.
     
-    NBPhoneNumber *INTERNATIONAL_TOLL_FREE_TOO_LONG = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *INTERNATIONAL_TOLL_FREE_TOO_LONG = [[RingcNBPhoneNumber alloc] init];
     INTERNATIONAL_TOLL_FREE_TOO_LONG.countryCode = @800;
     INTERNATIONAL_TOLL_FREE_TOO_LONG.nationalNumber = @123456789;
     
-    NBPhoneNumber *UNIVERSAL_PREMIUM_RATE = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *UNIVERSAL_PREMIUM_RATE = [[RingcNBPhoneNumber alloc] init];
     UNIVERSAL_PREMIUM_RATE.countryCode = @979;
     UNIVERSAL_PREMIUM_RATE.nationalNumber = @123456789;
     
-    NBPhoneNumber *UNKNOWN_COUNTRY_CODE_NO_RAW_INPUT = [[NBPhoneNumber alloc] init];
+    RingcNBPhoneNumber *UNKNOWN_COUNTRY_CODE_NO_RAW_INPUT = [[RingcNBPhoneNumber alloc] init];
     UNKNOWN_COUNTRY_CODE_NO_RAW_INPUT.countryCode = @2;
     UNKNOWN_COUNTRY_CODE_NO_RAW_INPUT.nationalNumber = @12345;
     
     
     #pragma mark - testGetInstanceLoadUSMetadata
     {
-        NBPhoneMetaData *metadata = [NBMetadataHelper getMetadataForRegion:@"US"];
+        RingcNBPhoneMetaData *metadata = [RingcNBMetadataHelper getMetadataForRegion:@"US"];
 
         XCTAssertEqualObjects(@"US", metadata.codeID);
         XCTAssertEqualObjects(@1, metadata.countryCode);
         XCTAssertEqualObjects(@"011", metadata.internationalPrefix);
         XCTAssertTrue(metadata.nationalPrefix != nil);
         XCTAssertEqual(2, (int)[metadata.numberFormats count]);
-        XCTAssertEqualObjects(@"(\\d{3})(\\d{3})(\\d{4})", ((NBNumberFormat*)metadata.numberFormats[1]).pattern);
-        XCTAssertEqualObjects(@"$1 $2 $3", ((NBNumberFormat*)metadata.numberFormats[1]).format);
+        XCTAssertEqualObjects(@"(\\d{3})(\\d{3})(\\d{4})", ((RingcNBNumberFormat*)metadata.numberFormats[1]).pattern);
+        XCTAssertEqualObjects(@"$1 $2 $3", ((RingcNBNumberFormat*)metadata.numberFormats[1]).format);
         XCTAssertEqualObjects(@"[13-689]\\d{9}|2[0-35-9]\\d{8}", metadata.generalDesc.nationalNumberPattern);
         XCTAssertEqualObjects(@"\\d{7}(?:\\d{3})?", metadata.generalDesc.possibleNumberPattern);
         XCTAssertTrue([metadata.generalDesc isEqual:metadata.fixedLine]);
@@ -389,16 +389,16 @@
                                            
     #pragma mark - testGetInstanceLoadDEMetadata
     {
-        NBPhoneMetaData *metadata = [NBMetadataHelper getMetadataForRegion:@"DE"];
+        RingcNBPhoneMetaData *metadata = [RingcNBMetadataHelper getMetadataForRegion:@"DE"];
         XCTAssertEqualObjects(@"DE", metadata.codeID);
         XCTAssertEqualObjects(@49, metadata.countryCode);
         XCTAssertEqualObjects(@"00", metadata.internationalPrefix);
         XCTAssertEqualObjects(@"0", metadata.nationalPrefix);
         XCTAssertEqual(6, (int)[metadata.numberFormats count]);
-        XCTAssertEqual(1, (int)[((NBNumberFormat*)metadata.numberFormats[5]).leadingDigitsPatterns count]);
-        XCTAssertEqualObjects(@"900", ((NBNumberFormat*)metadata.numberFormats[5]).leadingDigitsPatterns[0]);
-        XCTAssertEqualObjects(@"(\\d{3})(\\d{3,4})(\\d{4})", ((NBNumberFormat*)metadata.numberFormats[5]).pattern);
-        XCTAssertEqualObjects(@"$1 $2 $3", ((NBNumberFormat*)metadata.numberFormats[5]).format);
+        XCTAssertEqual(1, (int)[((RingcNBNumberFormat*)metadata.numberFormats[5]).leadingDigitsPatterns count]);
+        XCTAssertEqualObjects(@"900", ((RingcNBNumberFormat*)metadata.numberFormats[5]).leadingDigitsPatterns[0]);
+        XCTAssertEqualObjects(@"(\\d{3})(\\d{3,4})(\\d{4})", ((RingcNBNumberFormat*)metadata.numberFormats[5]).pattern);
+        XCTAssertEqualObjects(@"$1 $2 $3", ((RingcNBNumberFormat*)metadata.numberFormats[5]).format);
         XCTAssertEqualObjects(@"(?:[24-6]\\d{2}|3[03-9]\\d|[789](?:[1-9]\\d|0[2-9]))\\d{1,8}", metadata.fixedLine.nationalNumberPattern);
         XCTAssertEqualObjects(@"\\d{2,14}", metadata.fixedLine.possibleNumberPattern);
         XCTAssertEqualObjects(@"30123456", metadata.fixedLine.exampleNumber);
@@ -409,27 +409,27 @@
 
     #pragma mark - testGetInstanceLoadARMetadata
     {
-        NBPhoneMetaData *metadata = [NBMetadataHelper getMetadataForRegion:@"AR"];
+        RingcNBPhoneMetaData *metadata = [RingcNBMetadataHelper getMetadataForRegion:@"AR"];
         XCTAssertEqualObjects(@"AR", metadata.codeID);
         XCTAssertEqualObjects(@54, metadata.countryCode);
         XCTAssertEqualObjects(@"00", metadata.internationalPrefix);
         XCTAssertEqualObjects(@"0", metadata.nationalPrefix);
         XCTAssertEqualObjects(@"0(?:(11|343|3715)15)?", metadata.nationalPrefixForParsing);
         XCTAssertEqualObjects(@"9$1", metadata.nationalPrefixTransformRule);
-        XCTAssertEqualObjects(@"$2 15 $3-$4", ((NBNumberFormat*)metadata.numberFormats[2]).format);
-        XCTAssertEqualObjects(@"(9)(\\d{4})(\\d{2})(\\d{4})", ((NBNumberFormat*)metadata.numberFormats[3]).pattern);
-        XCTAssertEqualObjects(@"(9)(\\d{4})(\\d{2})(\\d{4})", ((NBNumberFormat*)metadata.intlNumberFormats[3]).pattern);
-        XCTAssertEqualObjects(@"$1 $2 $3 $4", ((NBNumberFormat*)metadata.intlNumberFormats[3]).format);
+        XCTAssertEqualObjects(@"$2 15 $3-$4", ((RingcNBNumberFormat*)metadata.numberFormats[2]).format);
+        XCTAssertEqualObjects(@"(9)(\\d{4})(\\d{2})(\\d{4})", ((RingcNBNumberFormat*)metadata.numberFormats[3]).pattern);
+        XCTAssertEqualObjects(@"(9)(\\d{4})(\\d{2})(\\d{4})", ((RingcNBNumberFormat*)metadata.intlNumberFormats[3]).pattern);
+        XCTAssertEqualObjects(@"$1 $2 $3 $4", ((RingcNBNumberFormat*)metadata.intlNumberFormats[3]).format);
     }
 
 
     #pragma mark - testGetInstanceLoadInternationalTollFreeMetadata
     {
-        NBPhoneMetaData *metadata = [NBMetadataHelper getMetadataForNonGeographicalRegion:@800];
+        RingcNBPhoneMetaData *metadata = [RingcNBMetadataHelper getMetadataForNonGeographicalRegion:@800];
         XCTAssertEqualObjects(@"001", metadata.codeID);
         XCTAssertEqualObjects(@800, metadata.countryCode);
-        XCTAssertEqualObjects(@"$1 $2", ((NBNumberFormat*)metadata.numberFormats[0]).format);
-        XCTAssertEqualObjects(@"(\\d{4})(\\d{4})", ((NBNumberFormat*)metadata.numberFormats[0]).pattern);
+        XCTAssertEqualObjects(@"$1 $2", ((RingcNBNumberFormat*)metadata.numberFormats[0]).format);
+        XCTAssertEqualObjects(@"(\\d{4})(\\d{4})", ((RingcNBNumberFormat*)metadata.numberFormats[0]).pattern);
         XCTAssertEqualObjects(@"12345678", metadata.generalDesc.exampleNumber);
         XCTAssertEqualObjects(@"12345678", metadata.tollFree.exampleNumber);
     }
@@ -529,7 +529,7 @@
         // A number containing an invalid country calling code, which shouldn't have
         // any NDC.
         
-        NBPhoneNumber *number = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *number = [[RingcNBPhoneNumber alloc] init];
         [number setCountryCode:@123];
         [number setNationalNumber:@6502530000];
         XCTAssertEqual(0, [_aUtil getLengthOfNationalDestinationCode:number]);
@@ -659,32 +659,32 @@
 
     #pragma mark - testFormatDENumber
     {
-        id deNumber = [[NBPhoneNumber alloc] init];
+        id deNumber = [[RingcNBPhoneNumber alloc] init];
         [deNumber setCountryCode:@49];
         [deNumber setNationalNumber:@301234];
         XCTAssertEqualObjects(@"030/1234", [_aUtil format:deNumber numberFormat:NBEPhoneNumberFormatNATIONAL]);
         XCTAssertEqualObjects(@"+49 30/1234", [_aUtil format:deNumber numberFormat:NBEPhoneNumberFormatINTERNATIONAL]);
         XCTAssertEqualObjects(@"tel:+49-30-1234", [_aUtil format:deNumber numberFormat:NBEPhoneNumberFormatRFC3966]);
         
-        deNumber = [[NBPhoneNumber alloc] init];
+        deNumber = [[RingcNBPhoneNumber alloc] init];
         [deNumber setCountryCode:@49];
         [deNumber setNationalNumber:@291123];
         XCTAssertEqualObjects(@"0291 123", [_aUtil format:deNumber numberFormat:NBEPhoneNumberFormatNATIONAL]);
         XCTAssertEqualObjects(@"+49 291 123", [_aUtil format:deNumber numberFormat:NBEPhoneNumberFormatINTERNATIONAL]);
         
-        deNumber = [[NBPhoneNumber alloc] init];
+        deNumber = [[RingcNBPhoneNumber alloc] init];
         [deNumber setCountryCode:@49];
         [deNumber setNationalNumber:@29112345678];
         XCTAssertEqualObjects(@"0291 12345678", [_aUtil format:deNumber numberFormat:NBEPhoneNumberFormatNATIONAL]);
         XCTAssertEqualObjects(@"+49 291 12345678", [_aUtil format:deNumber numberFormat:NBEPhoneNumberFormatINTERNATIONAL]);
         
-        deNumber = [[NBPhoneNumber alloc] init];
+        deNumber = [[RingcNBPhoneNumber alloc] init];
         [deNumber setCountryCode:@49];
         [deNumber setNationalNumber:@912312345];
         XCTAssertEqualObjects(@"09123 12345", [_aUtil format:deNumber numberFormat:NBEPhoneNumberFormatNATIONAL]);
         XCTAssertEqualObjects(@"+49 9123 12345", [_aUtil format:deNumber numberFormat:NBEPhoneNumberFormatINTERNATIONAL]);
         
-        deNumber = [[NBPhoneNumber alloc] init];
+        deNumber = [[RingcNBPhoneNumber alloc] init];
         [deNumber setCountryCode:@49];
         [deNumber setNationalNumber:@80212345];
         XCTAssertEqualObjects(@"08021 2345", [_aUtil format:deNumber numberFormat:NBEPhoneNumberFormatNATIONAL]);
@@ -696,7 +696,7 @@
         XCTAssertEqualObjects(@"1234", [_aUtil format:DE_SHORT_NUMBER numberFormat:NBEPhoneNumberFormatNATIONAL]);
         XCTAssertEqualObjects(@"+49 1234", [_aUtil format:DE_SHORT_NUMBER numberFormat:NBEPhoneNumberFormatINTERNATIONAL]);
         
-        deNumber = [[NBPhoneNumber alloc] init];
+        deNumber = [[RingcNBPhoneNumber alloc] init];
         [deNumber setCountryCode:@49];
         [deNumber setNationalNumber:@41341234];
         XCTAssertEqualObjects(@"04134 1234", [_aUtil format:deNumber numberFormat:NBEPhoneNumberFormatNATIONAL]);
@@ -718,7 +718,7 @@
         XCTAssertEqualObjects(@"+61 2 3661 8300", [_aUtil format:AU_NUMBER numberFormat:NBEPhoneNumberFormatINTERNATIONAL]);
         XCTAssertEqualObjects(@"+61236618300", [_aUtil format:AU_NUMBER numberFormat:NBEPhoneNumberFormatE164]);
         
-        id auNumber = [[NBPhoneNumber alloc] init];
+        id auNumber = [[RingcNBPhoneNumber alloc] init];
         [auNumber setCountryCode:@61];
         [auNumber setNationalNumber:@1800123456];
         XCTAssertEqualObjects(@"1800 123 456", [_aUtil format:auNumber numberFormat:NBEPhoneNumberFormatNATIONAL]);
@@ -800,7 +800,7 @@
 
     #pragma mark - testFormatOutOfCountryKeepingAlphaChars
     {
-        id alphaNumericNumber = [[NBPhoneNumber alloc] init];
+        id alphaNumericNumber = [[RingcNBPhoneNumber alloc] init];
         [alphaNumericNumber setCountryCode:@1];
         [alphaNumericNumber setNationalNumber:@8007493524];
         [alphaNumericNumber setRawInput:@"1800 six-flag"];
@@ -878,7 +878,7 @@
         // We only support this for AR in our test metadata, and only for mobile
         // numbers starting with certain values.
         
-        NBPhoneNumber *arMobile = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *arMobile = [[RingcNBPhoneNumber alloc] init];
         [arMobile setCountryCode:@54];
         [arMobile setNationalNumber:@92234654321];
         XCTAssertEqualObjects(@"02234 65-4321", [_aUtil format:arMobile numberFormat:NBEPhoneNumberFormatNATIONAL]);
@@ -899,7 +899,7 @@
     {
         // We only support this for AR in our test metadata.
         
-        NBPhoneNumber *arNumber = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *arNumber = [[RingcNBPhoneNumber alloc] init];
         [arNumber setCountryCode:@54];
         [arNumber setNationalNumber:@91234125678];
         // Test formatting with no preferred carrier code stored in the number itself.
@@ -916,7 +916,7 @@
         XCTAssertEqualObjects(@"01234 12-5678", [_aUtil formatNationalNumberWithPreferredCarrierCode:arNumber fallbackCarrierCode:@"15"]);
         // We don't support this for the US so there should be no change.
         
-        NBPhoneNumber *usNumber = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *usNumber = [[RingcNBPhoneNumber alloc] init];
         [usNumber setCountryCode:@1];
         [usNumber setNationalNumber:@4241231234];
         [usNumber setPreferredDomesticCarrierCode:@"99"];
@@ -979,7 +979,7 @@
     
     #pragma mark - testFormatByPattern
     {
-        NBNumberFormat *newNumFormat = [[NBNumberFormat alloc] init];
+        RingcNBNumberFormat *newNumFormat = [[RingcNBNumberFormat alloc] init];
         [newNumFormat setPattern:@"(\\d{3})(\\d{3})(\\d{4})"];
         [newNumFormat setFormat:@"($1) $2-$3"];
         
@@ -1042,83 +1042,83 @@
     #pragma mark - testFormatInOriginalFormat
     {
         NSError *anError = nil;
-        NBPhoneNumber *number1 = [_aUtil parseAndKeepRawInput:@"+442087654321" defaultRegion:@"GB" error:&anError];
+        RingcNBPhoneNumber *number1 = [_aUtil parseAndKeepRawInput:@"+442087654321" defaultRegion:@"GB" error:&anError];
         XCTAssertEqualObjects(@"+44 20 8765 4321", [_aUtil formatInOriginalFormat:number1 regionCallingFrom:@"GB"]);
         
-        NBPhoneNumber *number2 = [_aUtil parseAndKeepRawInput:@"02087654321" defaultRegion:@"GB" error:&anError];
+        RingcNBPhoneNumber *number2 = [_aUtil parseAndKeepRawInput:@"02087654321" defaultRegion:@"GB" error:&anError];
         XCTAssertEqualObjects(@"(020) 8765 4321", [_aUtil formatInOriginalFormat:number2 regionCallingFrom:@"GB"]);
         
-        NBPhoneNumber *number3 = [_aUtil parseAndKeepRawInput:@"011442087654321" defaultRegion:@"US" error:&anError];
+        RingcNBPhoneNumber *number3 = [_aUtil parseAndKeepRawInput:@"011442087654321" defaultRegion:@"US" error:&anError];
         XCTAssertEqualObjects(@"011 44 20 8765 4321", [_aUtil formatInOriginalFormat:number3 regionCallingFrom:@"US"]);
         
-        NBPhoneNumber *number4 = [_aUtil parseAndKeepRawInput:@"442087654321" defaultRegion:@"GB" error:&anError];
+        RingcNBPhoneNumber *number4 = [_aUtil parseAndKeepRawInput:@"442087654321" defaultRegion:@"GB" error:&anError];
         XCTAssertEqualObjects(@"44 20 8765 4321", [_aUtil formatInOriginalFormat:number4 regionCallingFrom:@"GB"]);
         
-        NBPhoneNumber *number5 = [_aUtil parse:@"+442087654321" defaultRegion:@"GB" error:&anError];
+        RingcNBPhoneNumber *number5 = [_aUtil parse:@"+442087654321" defaultRegion:@"GB" error:&anError];
         XCTAssertEqualObjects(@"(020) 8765 4321", [_aUtil formatInOriginalFormat:number5 regionCallingFrom:@"GB"]);
         
         // Invalid numbers that we have a formatting pattern for should be formatted
         // properly. Note area codes starting with 7 are intentionally excluded in
         // the test metadata for testing purposes.
-        NBPhoneNumber *number6 = [_aUtil parseAndKeepRawInput:@"7345678901" defaultRegion:@"US" error:&anError];
+        RingcNBPhoneNumber *number6 = [_aUtil parseAndKeepRawInput:@"7345678901" defaultRegion:@"US" error:&anError];
         XCTAssertEqualObjects(@"734 567 8901", [_aUtil formatInOriginalFormat:number6 regionCallingFrom:@"US"]);
         
         // US is not a leading zero country, and the presence of the leading zero
         // leads us to format the number using raw_input.
-        NBPhoneNumber *number7 = [_aUtil parseAndKeepRawInput:@"0734567 8901" defaultRegion:@"US" error:&anError];
+        RingcNBPhoneNumber *number7 = [_aUtil parseAndKeepRawInput:@"0734567 8901" defaultRegion:@"US" error:&anError];
         XCTAssertEqualObjects(@"0734567 8901", [_aUtil formatInOriginalFormat:number7 regionCallingFrom:@"US"]);
         
         // This number is valid, but we don't have a formatting pattern for it.
         // Fall back to the raw input.
-        NBPhoneNumber *number8 = [_aUtil parseAndKeepRawInput:@"02-4567-8900" defaultRegion:@"KR" error:&anError];
+        RingcNBPhoneNumber *number8 = [_aUtil parseAndKeepRawInput:@"02-4567-8900" defaultRegion:@"KR" error:&anError];
         XCTAssertEqualObjects(@"02-4567-8900", [_aUtil formatInOriginalFormat:number8 regionCallingFrom:@"KR"]);
         
-        NBPhoneNumber *number9 = [_aUtil parseAndKeepRawInput:@"01180012345678" defaultRegion:@"US" error:&anError];
+        RingcNBPhoneNumber *number9 = [_aUtil parseAndKeepRawInput:@"01180012345678" defaultRegion:@"US" error:&anError];
         XCTAssertEqualObjects(@"011 800 1234 5678", [_aUtil formatInOriginalFormat:number9 regionCallingFrom:@"US"]);
         
-        NBPhoneNumber *number10 = [_aUtil parseAndKeepRawInput:@"+80012345678" defaultRegion:@"KR" error:&anError];
+        RingcNBPhoneNumber *number10 = [_aUtil parseAndKeepRawInput:@"+80012345678" defaultRegion:@"KR" error:&anError];
         XCTAssertEqualObjects(@"+800 1234 5678", [_aUtil formatInOriginalFormat:number10 regionCallingFrom:@"KR"]);
         
         // US local numbers are formatted correctly, as we have formatting patterns
         // for them.
-        NBPhoneNumber *localNumberUS = [_aUtil parseAndKeepRawInput:@"2530000" defaultRegion:@"US" error:&anError];
+        RingcNBPhoneNumber *localNumberUS = [_aUtil parseAndKeepRawInput:@"2530000" defaultRegion:@"US" error:&anError];
         XCTAssertEqualObjects(@"253 0000", [_aUtil formatInOriginalFormat:localNumberUS regionCallingFrom:@"US"]);
         
-        NBPhoneNumber *numberWithNationalPrefixUS = [_aUtil parseAndKeepRawInput:@"18003456789" defaultRegion:@"US" error:&anError];
+        RingcNBPhoneNumber *numberWithNationalPrefixUS = [_aUtil parseAndKeepRawInput:@"18003456789" defaultRegion:@"US" error:&anError];
         XCTAssertEqualObjects(@"1 800 345 6789", [_aUtil formatInOriginalFormat:numberWithNationalPrefixUS regionCallingFrom:@"US"]);
         
-        NBPhoneNumber *numberWithoutNationalPrefixGB = [_aUtil parseAndKeepRawInput:@"2087654321" defaultRegion:@"GB" error:&anError];
+        RingcNBPhoneNumber *numberWithoutNationalPrefixGB = [_aUtil parseAndKeepRawInput:@"2087654321" defaultRegion:@"GB" error:&anError];
         XCTAssertEqualObjects(@"20 8765 4321", [_aUtil formatInOriginalFormat:numberWithoutNationalPrefixGB regionCallingFrom:@"GB"]);
         
         // Make sure no metadata is modified as a result of the previous function
         // call.
         XCTAssertEqualObjects(@"(020) 8765 4321", [_aUtil formatInOriginalFormat:number5 regionCallingFrom:@"GB" error:&anError]);
         
-        NBPhoneNumber *numberWithNationalPrefixMX = [_aUtil parseAndKeepRawInput:@"013312345678" defaultRegion:@"MX" error:&anError];
+        RingcNBPhoneNumber *numberWithNationalPrefixMX = [_aUtil parseAndKeepRawInput:@"013312345678" defaultRegion:@"MX" error:&anError];
         XCTAssertEqualObjects(@"01 33 1234 5678", [_aUtil formatInOriginalFormat:numberWithNationalPrefixMX regionCallingFrom:@"MX"]);
         
-        NBPhoneNumber *numberWithoutNationalPrefixMX = [_aUtil parseAndKeepRawInput:@"3312345678" defaultRegion:@"MX" error:&anError];
+        RingcNBPhoneNumber *numberWithoutNationalPrefixMX = [_aUtil parseAndKeepRawInput:@"3312345678" defaultRegion:@"MX" error:&anError];
         XCTAssertEqualObjects(@"33 1234 5678", [_aUtil formatInOriginalFormat:numberWithoutNationalPrefixMX regionCallingFrom:@"MX"]);
         
-        NBPhoneNumber *italianFixedLineNumber = [_aUtil parseAndKeepRawInput:@"0212345678" defaultRegion:@"IT" error:&anError];
+        RingcNBPhoneNumber *italianFixedLineNumber = [_aUtil parseAndKeepRawInput:@"0212345678" defaultRegion:@"IT" error:&anError];
         XCTAssertEqualObjects(@"02 1234 5678", [_aUtil formatInOriginalFormat:italianFixedLineNumber regionCallingFrom:@"IT"]);
         
-        NBPhoneNumber *numberWithNationalPrefixJP = [_aUtil parseAndKeepRawInput:@"00777012" defaultRegion:@"JP" error:&anError];
+        RingcNBPhoneNumber *numberWithNationalPrefixJP = [_aUtil parseAndKeepRawInput:@"00777012" defaultRegion:@"JP" error:&anError];
         XCTAssertEqualObjects(@"0077-7012", [_aUtil formatInOriginalFormat:numberWithNationalPrefixJP regionCallingFrom:@"JP"]);
         
-        NBPhoneNumber *numberWithoutNationalPrefixJP = [_aUtil parseAndKeepRawInput:@"0777012" defaultRegion:@"JP" error:&anError];
+        RingcNBPhoneNumber *numberWithoutNationalPrefixJP = [_aUtil parseAndKeepRawInput:@"0777012" defaultRegion:@"JP" error:&anError];
         XCTAssertEqualObjects(@"0777012", [_aUtil formatInOriginalFormat:numberWithoutNationalPrefixJP regionCallingFrom:@"JP"]);
         
-        NBPhoneNumber *numberWithCarrierCodeBR = [_aUtil parseAndKeepRawInput:@"012 3121286979" defaultRegion:@"BR" error:&anError];
+        RingcNBPhoneNumber *numberWithCarrierCodeBR = [_aUtil parseAndKeepRawInput:@"012 3121286979" defaultRegion:@"BR" error:&anError];
         XCTAssertEqualObjects(@"012 3121286979", [_aUtil formatInOriginalFormat:numberWithCarrierCodeBR regionCallingFrom:@"BR"]);
         
         // The default national prefix used in this case is 045. When a number with
         // national prefix 044 is entered, we return the raw input as we don't want to
         // change the number entered.
-        NBPhoneNumber *numberWithNationalPrefixMX1 = [_aUtil parseAndKeepRawInput:@"044(33)1234-5678" defaultRegion:@"MX" error:&anError];
+        RingcNBPhoneNumber *numberWithNationalPrefixMX1 = [_aUtil parseAndKeepRawInput:@"044(33)1234-5678" defaultRegion:@"MX" error:&anError];
         XCTAssertEqualObjects(@"044(33)1234-5678", [_aUtil formatInOriginalFormat:numberWithNationalPrefixMX1 regionCallingFrom:@"MX"]);
         
-        NBPhoneNumber *numberWithNationalPrefixMX2 = [_aUtil parseAndKeepRawInput:@"045(33)1234-5678" defaultRegion:@"MX" error:&anError];
+        RingcNBPhoneNumber *numberWithNationalPrefixMX2 = [_aUtil parseAndKeepRawInput:@"045(33)1234-5678" defaultRegion:@"MX" error:&anError];
         XCTAssertEqualObjects(@"045 33 1234 5678", [_aUtil formatInOriginalFormat:numberWithNationalPrefixMX2 regionCallingFrom:@"MX"]);
         
         // The default international prefix used in this case is 0011. When a number
@@ -1135,7 +1135,7 @@
         id starNumber = [_aUtil parseAndKeepRawInput:@"*1234" defaultRegion:@"JP" error:&anError];
         XCTAssertEqualObjects(@"*1234", [_aUtil formatInOriginalFormat:starNumber regionCallingFrom:@"JP"]);
         
-        NBPhoneNumber *numberWithoutStar = [_aUtil parseAndKeepRawInput:@"1234" defaultRegion:@"JP" error:&anError];
+        RingcNBPhoneNumber *numberWithoutStar = [_aUtil parseAndKeepRawInput:@"1234" defaultRegion:@"JP" error:&anError];
         XCTAssertEqualObjects(@"1234", [_aUtil formatInOriginalFormat:numberWithoutStar regionCallingFrom:@"JP"]);
         
         // Test an invalid national number without raw input is just formatted as the
@@ -1147,23 +1147,23 @@
     {
         XCTAssertEqual(NBEPhoneNumberTypePREMIUM_RATE, [_aUtil getNumberType:US_PREMIUM]);
         
-        NBPhoneNumber *premiumRateNumber = [[NBPhoneNumber alloc] init];
-        premiumRateNumber = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *premiumRateNumber = [[RingcNBPhoneNumber alloc] init];
+        premiumRateNumber = [[RingcNBPhoneNumber alloc] init];
         [premiumRateNumber setCountryCode:@39];
         [premiumRateNumber setNationalNumber:@892123];
         XCTAssertEqual(NBEPhoneNumberTypePREMIUM_RATE, [_aUtil getNumberType:premiumRateNumber]);
         
-        premiumRateNumber = [[NBPhoneNumber alloc] init];
+        premiumRateNumber = [[RingcNBPhoneNumber alloc] init];
         [premiumRateNumber setCountryCode:@44];
         [premiumRateNumber setNationalNumber:@9187654321];
         XCTAssertEqual(NBEPhoneNumberTypePREMIUM_RATE, [_aUtil getNumberType:premiumRateNumber]);
         
-        premiumRateNumber = [[NBPhoneNumber alloc] init];
+        premiumRateNumber = [[RingcNBPhoneNumber alloc] init];
         [premiumRateNumber setCountryCode:@49];
         [premiumRateNumber setNationalNumber:@9001654321];
         XCTAssertEqual(NBEPhoneNumberTypePREMIUM_RATE, [_aUtil getNumberType:premiumRateNumber]);
         
-        premiumRateNumber = [[NBPhoneNumber alloc] init];
+        premiumRateNumber = [[RingcNBPhoneNumber alloc] init];
         [premiumRateNumber setCountryCode:@49];
         [premiumRateNumber setNationalNumber:@90091234567];
         XCTAssertEqual(NBEPhoneNumberTypePREMIUM_RATE, [_aUtil getNumberType:premiumRateNumber]);
@@ -1173,23 +1173,23 @@
 
     #pragma mark - testIsTollFree
     {
-        NBPhoneNumber *tollFreeNumber = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *tollFreeNumber = [[RingcNBPhoneNumber alloc] init];
         
         [tollFreeNumber setCountryCode:@1];
         [tollFreeNumber setNationalNumber:@8881234567];
         XCTAssertEqual(NBEPhoneNumberTypeTOLL_FREE, [_aUtil getNumberType:tollFreeNumber]);
         
-        tollFreeNumber = [[NBPhoneNumber alloc] init];
+        tollFreeNumber = [[RingcNBPhoneNumber alloc] init];
         [tollFreeNumber setCountryCode:@39];
         [tollFreeNumber setNationalNumber:@803123];
         XCTAssertEqual(NBEPhoneNumberTypeTOLL_FREE, [_aUtil getNumberType:tollFreeNumber]);
         
-        tollFreeNumber = [[NBPhoneNumber alloc] init];
+        tollFreeNumber = [[RingcNBPhoneNumber alloc] init];
         [tollFreeNumber setCountryCode:@44];
         [tollFreeNumber setNationalNumber:@8012345678];
         XCTAssertEqual(NBEPhoneNumberTypeTOLL_FREE, [_aUtil getNumberType:tollFreeNumber]);
         
-        tollFreeNumber = [[NBPhoneNumber alloc] init];
+        tollFreeNumber = [[RingcNBPhoneNumber alloc] init];
         [tollFreeNumber setCountryCode:@49];
         [tollFreeNumber setNationalNumber:@8001234567];
         XCTAssertEqual(NBEPhoneNumberTypeTOLL_FREE, [_aUtil getNumberType:tollFreeNumber]);
@@ -1205,7 +1205,7 @@
         XCTAssertEqual(NBEPhoneNumberTypeMOBILE, [_aUtil getNumberType:IT_MOBILE]);
         XCTAssertEqual(NBEPhoneNumberTypeMOBILE, [_aUtil getNumberType:AR_MOBILE]);
         
-        NBPhoneNumber *mobileNumber = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *mobileNumber = [[RingcNBPhoneNumber alloc] init];
         [mobileNumber setCountryCode:@49];
         [mobileNumber setNationalNumber:@15123456789];
         XCTAssertEqual(NBEPhoneNumberTypeMOBILE, [_aUtil getNumberType:mobileNumber]);
@@ -1225,7 +1225,7 @@
     {
         XCTAssertEqual(NBEPhoneNumberTypeFIXED_LINE_OR_MOBILE, [_aUtil getNumberType:US_NUMBER]);
         
-        NBPhoneNumber *fixedLineAndMobileNumber = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *fixedLineAndMobileNumber = [[RingcNBPhoneNumber alloc] init];
         [fixedLineAndMobileNumber setCountryCode:@54];
         [fixedLineAndMobileNumber setNationalNumber:@1987654321];
         XCTAssertEqual(NBEPhoneNumberTypeFIXED_LINE_OR_MOBILE, [_aUtil getNumberType:fixedLineAndMobileNumber]);
@@ -1234,7 +1234,7 @@
     
     #pragma mark - testIsSharedCost
     {
-        NBPhoneNumber *gbNumber = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *gbNumber = [[RingcNBPhoneNumber alloc] init];
         [gbNumber setCountryCode:@44];
         [gbNumber setNationalNumber:@8431231234];
         XCTAssertEqual(NBEPhoneNumberTypeSHARED_COST, [_aUtil getNumberType:gbNumber]);
@@ -1243,7 +1243,7 @@
     
     #pragma mark - testIsVoip
     {
-        NBPhoneNumber *gbNumber = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *gbNumber = [[RingcNBPhoneNumber alloc] init];
         [gbNumber setCountryCode:@44];
         [gbNumber setNationalNumber:@5631231234];
         XCTAssertEqual(NBEPhoneNumberTypeVOIP, [_aUtil getNumberType:gbNumber]);
@@ -1252,7 +1252,7 @@
     
     #pragma mark - testIsPersonalNumber
     {
-        NBPhoneNumber *gbNumber = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *gbNumber = [[RingcNBPhoneNumber alloc] init];
         [gbNumber setCountryCode:@44];
         [gbNumber setNationalNumber:@7031231234];
         XCTAssertEqual(NBEPhoneNumberTypePERSONAL_NUMBER, [_aUtil getNumberType:gbNumber]);
@@ -1274,7 +1274,7 @@
         XCTAssertTrue([_aUtil isValidNumber:INTERNATIONAL_TOLL_FREE]);
         XCTAssertTrue([_aUtil isValidNumber:UNIVERSAL_PREMIUM_RATE]);
         
-        NBPhoneNumber *nzNumber = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *nzNumber = [[RingcNBPhoneNumber alloc] init];
         [nzNumber setCountryCode:@64];
         [nzNumber setNationalNumber:@21387835];
         XCTAssertTrue([_aUtil isValidNumber:nzNumber]);
@@ -1288,7 +1288,7 @@
         XCTAssertTrue([_aUtil isValidNumberForRegion:BS_NUMBER regionCode:@"BS"]);
         XCTAssertFalse([_aUtil isValidNumberForRegion:BS_NUMBER regionCode:@"US"]);
         
-        NBPhoneNumber *bsInvalidNumber = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *bsInvalidNumber = [[RingcNBPhoneNumber alloc] init];
         [bsInvalidNumber setCountryCode:@1];
         [bsInvalidNumber setNationalNumber:@2421232345];
         // This number is no longer valid.
@@ -1296,7 +1296,7 @@
         
         // La Mayotte and Reunion use 'leadingDigits' to differentiate them.
         
-        NBPhoneNumber *reNumber = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *reNumber = [[RingcNBPhoneNumber alloc] init];
         [reNumber setCountryCode:@262];
         [reNumber setNationalNumber:@262123456];
         XCTAssertTrue([_aUtil isValidNumber:reNumber]);
@@ -1326,7 +1326,7 @@
         XCTAssertFalse([_aUtil isValidNumberForRegion:INTERNATIONAL_TOLL_FREE regionCode:@"US"]);
         XCTAssertFalse([_aUtil isValidNumberForRegion:INTERNATIONAL_TOLL_FREE regionCode:@"ZZ"]);
         
-        NBPhoneNumber *invalidNumber = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *invalidNumber = [[RingcNBPhoneNumber alloc] init];
         // Invalid country calling codes.
         [invalidNumber setCountryCode:@3923];
         [invalidNumber setNationalNumber:@2366];
@@ -1342,28 +1342,28 @@
     {
         XCTAssertFalse([_aUtil isValidNumber:US_LOCAL_NUMBER]);
         
-        NBPhoneNumber *invalidNumber = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *invalidNumber = [[RingcNBPhoneNumber alloc] init];
         [invalidNumber setCountryCode:@39];
         [invalidNumber setNationalNumber:@23661830000];
         [invalidNumber setItalianLeadingZero:YES];
         XCTAssertFalse([_aUtil isValidNumber:invalidNumber]);
         
-        invalidNumber = [[NBPhoneNumber alloc] init];
+        invalidNumber = [[RingcNBPhoneNumber alloc] init];
         [invalidNumber setCountryCode:@44];
         [invalidNumber setNationalNumber:@791234567];
         XCTAssertFalse([_aUtil isValidNumber:invalidNumber]);
         
-        invalidNumber = [[NBPhoneNumber alloc] init];
+        invalidNumber = [[RingcNBPhoneNumber alloc] init];
         [invalidNumber setCountryCode:@0];
         [invalidNumber setNationalNumber:@1234];
         XCTAssertFalse([_aUtil isValidNumber:invalidNumber]);
         
-        invalidNumber = [[NBPhoneNumber alloc] init];
+        invalidNumber = [[RingcNBPhoneNumber alloc] init];
         [invalidNumber setCountryCode:@64];
         [invalidNumber setNationalNumber:@3316005];
         XCTAssertFalse([_aUtil isValidNumber:invalidNumber]);
         
-        invalidNumber = [[NBPhoneNumber alloc] init];
+        invalidNumber = [[RingcNBPhoneNumber alloc] init];
         // Invalid country calling codes.
         [invalidNumber setCountryCode:@3923];
         [invalidNumber setNationalNumber:@2366];
@@ -1482,17 +1482,17 @@
         XCTAssertEqual(NBEValidationResultIS_POSSIBLE, [_aUtil isPossibleNumberWithReason:US_LOCAL_NUMBER]);
         XCTAssertEqual(NBEValidationResultTOO_LONG, [_aUtil isPossibleNumberWithReason:US_LONG_NUMBER]);
         
-        NBPhoneNumber *number = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *number = [[RingcNBPhoneNumber alloc] init];
         [number setCountryCode:@0];
         [number setNationalNumber:@2530000];
         XCTAssertEqual(NBEValidationResultINVALID_COUNTRY_CODE, [_aUtil isPossibleNumberWithReason:number]);
         
-        number = [[NBPhoneNumber alloc] init];
+        number = [[RingcNBPhoneNumber alloc] init];
         [number setCountryCode:@1];
         [number setNationalNumber:@253000];
         XCTAssertEqual(NBEValidationResultTOO_SHORT, [_aUtil isPossibleNumberWithReason:number]);
         
-        number = [[NBPhoneNumber alloc] init];
+        number = [[RingcNBPhoneNumber alloc] init];
         [number setCountryCode:@65];
         [number setNationalNumber:@1234567890];
         XCTAssertEqual(NBEValidationResultIS_POSSIBLE, [_aUtil isPossibleNumberWithReason:number]);
@@ -1500,7 +1500,7 @@
         
         // Try with number that we don't have metadata for.
         
-        NBPhoneNumber *adNumber = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *adNumber = [[RingcNBPhoneNumber alloc] init];
         [adNumber setCountryCode:@376];
         [adNumber setNationalNumber:@12345];
         XCTAssertEqual(NBEValidationResultIS_POSSIBLE, [_aUtil isPossibleNumberWithReason:adNumber]);
@@ -1520,12 +1520,12 @@
         XCTAssertFalse([_aUtil isPossibleNumber:US_LONG_NUMBER]);
         XCTAssertFalse([_aUtil isPossibleNumber:INTERNATIONAL_TOLL_FREE_TOO_LONG]);
         
-        NBPhoneNumber *number = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *number = [[RingcNBPhoneNumber alloc] init];
         [number setCountryCode:@1];
         [number setNationalNumber:@253000];
         XCTAssertFalse([_aUtil isPossibleNumber:number]);
         
-        number = [[NBPhoneNumber alloc] init];
+        number = [[RingcNBPhoneNumber alloc] init];
         [number setCountryCode:@44];
         [number setNationalNumber:@300];
         XCTAssertFalse([_aUtil isPossibleNumber:number]);
@@ -1542,23 +1542,23 @@
     #pragma mark - testTruncateTooLongNumber
     {
         // GB number 080 1234 5678, but entered with 4 extra digits at the end.
-        NBPhoneNumber *tooLongNumber = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *tooLongNumber = [[RingcNBPhoneNumber alloc] init];
         [tooLongNumber setCountryCode:@44];
         [tooLongNumber setNationalNumber:@80123456780123];
         
-        NBPhoneNumber *validNumber = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *validNumber = [[RingcNBPhoneNumber alloc] init];
         [validNumber setCountryCode:@44];
         [validNumber setNationalNumber:@8012345678];
         XCTAssertTrue([_aUtil truncateTooLongNumber:tooLongNumber]);
         XCTAssertTrue([validNumber isEqual:tooLongNumber]);
         
         // IT number 022 3456 7890, but entered with 3 extra digits at the end.
-        tooLongNumber = [[NBPhoneNumber alloc] init];
+        tooLongNumber = [[RingcNBPhoneNumber alloc] init];
         [tooLongNumber setCountryCode:@39];
         [tooLongNumber setNationalNumber:@2234567890123];
         [tooLongNumber setItalianLeadingZero:YES];
                                              
-        validNumber = [[NBPhoneNumber alloc] init];
+        validNumber = [[RingcNBPhoneNumber alloc] init];
         [validNumber setCountryCode:@39];
         [validNumber setNationalNumber:@2234567890];
         [validNumber setItalianLeadingZero:YES];
@@ -1576,30 +1576,30 @@
         
         // Tests what happens when a valid number is passed in.
         
-        NBPhoneNumber *validNumberCopy = [validNumber copy];
+        RingcNBPhoneNumber *validNumberCopy = [validNumber copy];
         XCTAssertTrue([_aUtil truncateTooLongNumber:validNumber]);
         // Tests the number is not modified.
         XCTAssertTrue([validNumber isEqual:validNumberCopy]);
         
         // Tests what happens when a number with invalid prefix is passed in.
         
-        NBPhoneNumber *numberWithInvalidPrefix = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *numberWithInvalidPrefix = [[RingcNBPhoneNumber alloc] init];
         // The test metadata says US numbers cannot have prefix 240.
         [numberWithInvalidPrefix setCountryCode:@1];
         [numberWithInvalidPrefix setNationalNumber:@2401234567];
         
-        NBPhoneNumber *invalidNumberCopy = [numberWithInvalidPrefix copy];
+        RingcNBPhoneNumber *invalidNumberCopy = [numberWithInvalidPrefix copy];
         XCTAssertFalse([_aUtil truncateTooLongNumber:numberWithInvalidPrefix]);
         // Tests the number is not modified.
         XCTAssertTrue([numberWithInvalidPrefix isEqual:invalidNumberCopy]);
         
         // Tests what happens when a too short number is passed in.
         
-        NBPhoneNumber *tooShortNumber = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *tooShortNumber = [[RingcNBPhoneNumber alloc] init];
         [tooShortNumber setCountryCode:@1];
         [tooShortNumber setNationalNumber:@1234];
         
-        NBPhoneNumber *tooShortNumberCopy = [tooShortNumber copy];
+        RingcNBPhoneNumber *tooShortNumberCopy = [tooShortNumber copy];
         XCTAssertFalse([_aUtil truncateTooLongNumber:tooShortNumber]);
         // Tests the number is not modified.
         XCTAssertTrue([tooShortNumber isEqual:tooShortNumberCopy]);
@@ -1669,14 +1669,14 @@
     #pragma mark - testMaybeStripNationalPrefix
     {
         NSLog(@"-------------- testMaybeStripNationalPrefix");
-        NBPhoneMetaData *metadata = [[NBPhoneMetaData alloc] init];
+        RingcNBPhoneMetaData *metadata = [[RingcNBPhoneMetaData alloc] init];
         [metadata setNationalPrefixForParsing:@"34"];
         
-        NBPhoneNumberDesc *generalDesc = [[NBPhoneNumberDesc alloc] init];
+        RingcNBPhoneNumberDesc *generalDesc = [[RingcNBPhoneNumberDesc alloc] init];
         [generalDesc setNationalNumberPattern:@"\\d{4,8}"];
         [metadata setGeneralDesc:generalDesc];
         
-        NBPhoneNumber *numberToStrip = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *numberToStrip = [[RingcNBPhoneNumber alloc] init];
         [numberToStrip setRawInput:@"34356778"];
         
         NSString *strippedNumber = @"356778";
@@ -1779,8 +1779,8 @@
     #pragma mark - testMaybeExtractCountryCode
     {
         NSLog(@"-------------- testMaybeExtractCountryCode");
-        NBPhoneNumber *number = [[NBPhoneNumber alloc] init];
-        NBPhoneMetaData *metadata = [NBMetadataHelper getMetadataForRegion:@"US"];
+        RingcNBPhoneNumber *number = [[RingcNBPhoneNumber alloc] init];
+        RingcNBPhoneMetaData *metadata = [RingcNBMetadataHelper getMetadataForRegion:@"US"];
         
         // Note that for the US, the IDD is 011.
         NSString *phoneNumber = @"011112-3456789";
@@ -1803,7 +1803,7 @@
         // Should strip and normalize national significant number.
         XCTAssertEqualObjects(strippedNumber, numberToFill, @"Did not strip off the country calling code correctly.");
         
-        number = [[NBPhoneNumber alloc] init];
+        number = [[RingcNBPhoneNumber alloc] init];
         phoneNumber = @"+6423456789";
         countryCallingCode = @64;
         numberToFill = @"";
@@ -1811,7 +1811,7 @@
                                                                      nationalNumber:&numberToFill keepRawInput:YES phoneNumber:&number error:nil]);
         XCTAssertEqual(NBECountryCodeSourceFROM_NUMBER_WITH_PLUS_SIGN, [number.countryCodeSource intValue], @"Did not figure out CountryCodeSource correctly");
         
-        number = [[NBPhoneNumber alloc] init];
+        number = [[RingcNBPhoneNumber alloc] init];
         phoneNumber = @"+80012345678";
         countryCallingCode = @800;
         numberToFill = @"";
@@ -1819,7 +1819,7 @@
                                                  nationalNumber:&numberToFill keepRawInput:YES phoneNumber:&number error:nil]);
         XCTAssertEqual(NBECountryCodeSourceFROM_NUMBER_WITH_PLUS_SIGN, [number.countryCodeSource intValue], @"Did not figure out CountryCodeSource correctly");
         
-        number = [[NBPhoneNumber alloc] init];
+        number = [[RingcNBPhoneNumber alloc] init];
         phoneNumber = @"2345-6789";
         numberToFill = @"";
         XCTAssertEqual(@0, [_aUtil maybeExtractCountryCode:phoneNumber metadata:metadata
@@ -1827,7 +1827,7 @@
         XCTAssertEqual(NBECountryCodeSourceFROM_DEFAULT_COUNTRY, [number.countryCodeSource intValue], @"Did not figure out CountryCodeSource correctly");
 
                                  
-        number = [[NBPhoneNumber alloc] init];
+        number = [[RingcNBPhoneNumber alloc] init];
         phoneNumber = @"0119991123456789";
         numberToFill = @"";
         {
@@ -1840,7 +1840,7 @@
                 XCTAssertEqualObjects(@"INVALID_COUNTRY_CODE", anError.domain);
         }
         
-        number = [[NBPhoneNumber alloc] init];
+        number = [[RingcNBPhoneNumber alloc] init];
         phoneNumber = @"(1 610) 619 4466";
         countryCallingCode = @1;
         numberToFill = @"";
@@ -1852,7 +1852,7 @@
             XCTAssertEqual(NBECountryCodeSourceFROM_NUMBER_WITHOUT_PLUS_SIGN, [number.countryCodeSource intValue], @"Did not figure out CountryCodeSource correctly");
         }
         
-        number = [[NBPhoneNumber alloc] init];
+        number = [[RingcNBPhoneNumber alloc] init];
         phoneNumber = @"(1 610) 619 4466";
         countryCallingCode = @1;
         numberToFill = @"";
@@ -1862,7 +1862,7 @@
                                                                    nationalNumber:&numberToFill keepRawInput:NO phoneNumber:&number error:&anError]);
         }
                 
-        number = [[NBPhoneNumber alloc] init];
+        number = [[RingcNBPhoneNumber alloc] init];
         phoneNumber = @"(1 610) 619 446";
         numberToFill = @"";
         {
@@ -1872,7 +1872,7 @@
             XCTAssertFalse(number.countryCodeSource != nil, @"Should not contain CountryCodeSource.");
         }
         
-        number = [[NBPhoneNumber alloc] init];
+        number = [[RingcNBPhoneNumber alloc] init];
         phoneNumber = @"(1 610) 619";
         numberToFill = @"";
         {
@@ -1931,14 +1931,14 @@
         XCTAssertTrue([US_LOCAL_NUMBER isEqual:[_aUtil parse:@"tel:2530000;isub=12345;phone-context=1-650" defaultRegion:@"US" error:&anError]]);
         XCTAssertTrue([US_LOCAL_NUMBER isEqual:[_aUtil parse:@"tel:2530000;isub=12345;phone-context=1234.com" defaultRegion:@"US" error:&anError]]);
         
-        NBPhoneNumber *nzNumber = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *nzNumber = [[RingcNBPhoneNumber alloc] init];
         [nzNumber setCountryCode:@64];
         [nzNumber setNationalNumber:@64123456];
         XCTAssertTrue([nzNumber isEqual:[_aUtil parse:@"64(0)64123456" defaultRegion:@"NZ" error:&anError]]);
         // Check that using a '/' is fine in a phone number.
         XCTAssertTrue([DE_NUMBER isEqual:[_aUtil parse:@"301/23456" defaultRegion:@"DE" error:&anError]]);
         
-        NBPhoneNumber *usNumber = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *usNumber = [[RingcNBPhoneNumber alloc] init];
         // Check it doesn't use the '1' as a country calling code when parsing if the
         // phone number was already possible.
         [usNumber setCountryCode:@1];
@@ -1949,7 +1949,7 @@
         // make sure we can parse the output we produce when formatting the number.
         XCTAssertTrue([JP_STAR_NUMBER isEqual:[_aUtil parse:@"+81 *2345" defaultRegion:@"JP" error:&anError]]);
         
-        NBPhoneNumber *shortNumber = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *shortNumber = [[RingcNBPhoneNumber alloc] init];
         [shortNumber setCountryCode:@64];
         [shortNumber setNationalNumber:@12];
         XCTAssertTrue([shortNumber isEqual:[_aUtil parse:@"12" defaultRegion:@"NZ" error:&anError]]);
@@ -1961,12 +1961,12 @@
         NSError *anError;
         NSLog(@"-------------- testParseNumberWithAlphaCharacters");
         // Test case with alpha characters.
-        NBPhoneNumber *tollfreeNumber = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *tollfreeNumber = [[RingcNBPhoneNumber alloc] init];
         [tollfreeNumber setCountryCode:@64];
         [tollfreeNumber setNationalNumber:@800332005];
         XCTAssertTrue([tollfreeNumber isEqual:[_aUtil parse:@"0800 DDA 005" defaultRegion:@"NZ" error:&anError]]);
         
-        NBPhoneNumber *premiumNumber = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *premiumNumber = [[RingcNBPhoneNumber alloc] init];
         [premiumNumber setCountryCode:@64];
         [premiumNumber setNationalNumber:@9003326005];
         XCTAssertTrue([premiumNumber isEqual:[_aUtil parse:@"0900 DDA 6005" defaultRegion:@"NZ" error:&anError]]);
@@ -2079,13 +2079,13 @@
         NSError *anError = nil;
         NSLog(@"-------------- testParseNationalNumberArgentina");
         // Test parsing mobile numbers of Argentina.
-        NBPhoneNumber *arNumber = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *arNumber = [[RingcNBPhoneNumber alloc] init];
         [arNumber setCountryCode:@54];
         [arNumber setNationalNumber:@93435551212];
         XCTAssertTrue([arNumber isEqual:[_aUtil parse:@"+54 9 343 555 1212" defaultRegion:@"AR" error:&anError]]);
         XCTAssertTrue([arNumber isEqual:[_aUtil parse:@"0343 15 555 1212" defaultRegion:@"AR" error:&anError]]);
         
-        arNumber = [[NBPhoneNumber alloc] init];
+        arNumber = [[RingcNBPhoneNumber alloc] init];
         [arNumber setCountryCode:@54];
         [arNumber setNationalNumber:@93715654320];
         XCTAssertTrue([arNumber isEqual:[_aUtil parse:@"+54 9 3715 65 4320" defaultRegion:@"AR" error:&anError]]);
@@ -2096,13 +2096,13 @@
         XCTAssertTrue([AR_NUMBER isEqual:[_aUtil parse:@"+54 11 8765 4321" defaultRegion:@"AR" error:&anError]]);
         XCTAssertTrue([AR_NUMBER isEqual:[_aUtil parse:@"011 8765 4321" defaultRegion:@"AR" error:&anError]]);
         
-        arNumber = [[NBPhoneNumber alloc] init];
+        arNumber = [[RingcNBPhoneNumber alloc] init];
         [arNumber setCountryCode:@54];
         [arNumber setNationalNumber:@3715654321];
         XCTAssertTrue([arNumber isEqual:[_aUtil parse:@"+54 3715 65 4321" defaultRegion:@"AR" error:&anError]]);
         XCTAssertTrue([arNumber isEqual:[_aUtil parse:@"03715 65 4321" defaultRegion:@"AR" error:&anError]]);
         
-        arNumber = [[NBPhoneNumber alloc] init];
+        arNumber = [[RingcNBPhoneNumber alloc] init];
         [arNumber setCountryCode:@54];
         [arNumber setNationalNumber:@2312340000];
         XCTAssertTrue([arNumber isEqual:[_aUtil parse:@"+54 23 1234 0000" defaultRegion:@"AR" error:&anError]]);
@@ -2121,7 +2121,7 @@
         XCTAssertTrue([AR_NUMBER isEqual:[_aUtil parse:@"0 1187654321" defaultRegion:@"AR" error:&anError]]);
         XCTAssertTrue([AR_NUMBER isEqual:[_aUtil parse:@"(0xx) 1187654321" defaultRegion:@"AR" error:&anError]]);
         
-        id arFromUs = [[NBPhoneNumber alloc] init];
+        id arFromUs = [[RingcNBPhoneNumber alloc] init];
         [arFromUs setCountryCode:@54];
         [arFromUs setNationalNumber:@81429712];
         // This test is intentionally constructed such that the number of digit after
@@ -2139,7 +2139,7 @@
         NSLog(@"-------------- testParseNumbersMexico");
         // Test parsing fixed-line numbers of Mexico.
         
-        id mxNumber = [[NBPhoneNumber alloc] init];
+        id mxNumber = [[RingcNBPhoneNumber alloc] init];
         [mxNumber setCountryCode:@52];
         [mxNumber setNationalNumber:@4499780001];
         XCTAssertTrue([mxNumber isEqual:[_aUtil parse:@"+52 (449)978-0001" defaultRegion:@"MX" error:&anError]]);
@@ -2147,7 +2147,7 @@
         XCTAssertTrue([mxNumber isEqual:[_aUtil parse:@"(449)978-0001" defaultRegion:@"MX" error:&anError]]);
         
         // Test parsing mobile numbers of Mexico.
-        mxNumber = [[NBPhoneNumber alloc] init];
+        mxNumber = [[RingcNBPhoneNumber alloc] init];
         [mxNumber setCountryCode:@52];
         [mxNumber setNationalNumber:@13312345678];
         XCTAssertTrue([mxNumber isEqual:[_aUtil parse:@"+52 1 33 1234-5678" defaultRegion:@"MX" error:&anError]]);
@@ -2462,7 +2462,7 @@
     {
         NSError *anError = nil;
         NSLog(@"-------------- testParseExtensions");
-        NBPhoneNumber *nzNumber = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *nzNumber = [[RingcNBPhoneNumber alloc] init];
         [nzNumber setCountryCode:@64];
         [nzNumber setNationalNumber:@33316005];
         [nzNumber setExtension:@"3456"];
@@ -2487,7 +2487,7 @@
         // if it was a 0 when extracting the extension. Also verifying a few different
         // cases of extensions.
         
-        id ukNumber = [[NBPhoneNumber alloc] init];
+        id ukNumber = [[RingcNBPhoneNumber alloc] init];
         [ukNumber setCountryCode:@44];
         [ukNumber setNationalNumber:@2034567890];
         [ukNumber setExtension:@"456"];
@@ -2508,7 +2508,7 @@
         // 'xt' only.
         XCTAssertTrue([ukNumber isEqual:[_aUtil parse:@"+442034567890\uFF58\uFF54456" defaultRegion:@"GB" error:&anError]]);
         
-        id usWithExtension = [[NBPhoneNumber alloc] init];
+        id usWithExtension = [[RingcNBPhoneNumber alloc] init];
         [usWithExtension setCountryCode:@1];
         [usWithExtension setNationalNumber:@8009013355];
         [usWithExtension setExtension:@"7246433"];
@@ -2524,7 +2524,7 @@
         XCTAssertTrue([usWithExtension isEqual:[_aUtil parse:@"(800) 901-3355 ext: 7246433" defaultRegion:@"US" error:&anError]]);
         
         // Test that if a number has two extensions specified, we ignore the second.
-        id usWithTwoExtensionsNumber = [[NBPhoneNumber alloc] init];
+        id usWithTwoExtensionsNumber = [[RingcNBPhoneNumber alloc] init];
         [usWithTwoExtensionsNumber setCountryCode:@1];
         [usWithTwoExtensionsNumber setNationalNumber:@2121231234];
         [usWithTwoExtensionsNumber setExtension:@"508"];
@@ -2534,7 +2534,7 @@
         
         // Test parsing numbers in the form (645) 123-1234-910# works, where the last
         // 3 digits before the # are an extension.
-        usWithExtension = [[NBPhoneNumber alloc] init];
+        usWithExtension = [[RingcNBPhoneNumber alloc] init];
         [usWithExtension setCountryCode:@1];
         [usWithExtension setNationalNumber:@6451231234];
         [usWithExtension setExtension:@"910"];
@@ -2548,13 +2548,13 @@
     {
         NSError *anError;
         NSLog(@"-------------- testParseAndKeepRaw");
-        NBPhoneNumber *alphaNumericNumber = [ALPHA_NUMERIC_NUMBER copy];
+        RingcNBPhoneNumber *alphaNumericNumber = [ALPHA_NUMERIC_NUMBER copy];
         [alphaNumericNumber setRawInput:@"800 six-flags"];
         [alphaNumericNumber setCountryCodeSource:[NSNumber numberWithInt:NBECountryCodeSourceFROM_DEFAULT_COUNTRY]];
         [alphaNumericNumber setPreferredDomesticCarrierCode:@""];
         XCTAssertTrue([alphaNumericNumber isEqual:[_aUtil parseAndKeepRawInput:@"800 six-flags" defaultRegion:@"US" error:&anError]]);
         
-        id shorterAlphaNumber = [[NBPhoneNumber alloc] init];
+        id shorterAlphaNumber = [[RingcNBPhoneNumber alloc] init];
         [shorterAlphaNumber setCountryCode:@1];
         [shorterAlphaNumber setNationalNumber:@8007493524];
         [shorterAlphaNumber setRawInput:@"1800 six-flag"];
@@ -2583,7 +2583,7 @@
             }
         }
         
-        id koreanNumber = [[NBPhoneNumber alloc] init];
+        id koreanNumber = [[RingcNBPhoneNumber alloc] init];
         [koreanNumber setCountryCode:@82];
         [koreanNumber setNationalNumber:@22123456];
         [koreanNumber setRawInput:@"08122123456"];
@@ -2598,7 +2598,7 @@
         NSLog(@"-------------- testCountryWithNoNumberDesc");
         // Andorra is a country where we don't have PhoneNumberDesc info in the
         // metadata.
-        NBPhoneNumber *adNumber = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *adNumber = [[RingcNBPhoneNumber alloc] init];
         [adNumber setCountryCode:@376];
         [adNumber setNationalNumber:@12345];
         XCTAssertEqualObjects(@"+376 12345", [_aUtil format:adNumber numberFormat:NBEPhoneNumberFormatINTERNATIONAL]);
@@ -2631,8 +2631,8 @@
         
         NSError *anError = nil;
         
-        NBPhoneNumber *num1 = [_aUtil parse:@"+64 3 331 6005" defaultRegion:@"NZ" error:&anError];
-        NBPhoneNumber *num2 = [_aUtil parse:@"+64 03 331 6005" defaultRegion:@"NZ" error:&anError];
+        RingcNBPhoneNumber *num1 = [_aUtil parse:@"+64 3 331 6005" defaultRegion:@"NZ" error:&anError];
+        RingcNBPhoneNumber *num2 = [_aUtil parse:@"+64 03 331 6005" defaultRegion:@"NZ" error:&anError];
         XCTAssertEqual(NBEMatchTypeEXACT_MATCH, [_aUtil isNumberMatch:num1 second:num2]);
         XCTAssertEqual(NBEMatchTypeEXACT_MATCH, [_aUtil isNumberMatch:@"+64 3 331 6005" second:@"+64 03 331 6005"]);
         XCTAssertEqual(NBEMatchTypeEXACT_MATCH, [_aUtil isNumberMatch:@"+800 1234 5678" second:@"+80012345678"]);
@@ -2648,7 +2648,7 @@
         // Test proto buffers.
         XCTAssertEqual(NBEMatchTypeEXACT_MATCH, [_aUtil isNumberMatch:NZ_NUMBER second:@"+6403 331 6005"]);
         
-        NBPhoneNumber *nzNumber = [NZ_NUMBER copy];
+        RingcNBPhoneNumber *nzNumber = [NZ_NUMBER copy];
         [nzNumber setExtension:@"3456"];
         XCTAssertEqual(NBEMatchTypeEXACT_MATCH, [_aUtil isNumberMatch:nzNumber second:@"+643 331 6005 ext 3456"]);
         // Check empty extensions are ignored.
@@ -2660,9 +2660,9 @@
         // Check raw_input, country_code_source and preferred_domestic_carrier_code
         // are ignored.
         
-        NBPhoneNumber *brNumberOne = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *brNumberOne = [[RingcNBPhoneNumber alloc] init];
         
-        NBPhoneNumber *brNumberTwo = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *brNumberTwo = [[RingcNBPhoneNumber alloc] init];
         [brNumberOne setCountryCode:@55];
         [brNumberOne setNationalNumber:@3121286979];
         [brNumberOne setCountryCodeSource:[NSNumber numberWithInt:NBECountryCodeSourceFROM_NUMBER_WITH_PLUS_SIGN]];
@@ -2710,7 +2710,7 @@
         // Here the second number possibly starts with the country calling code for
         // New Zealand, although we are unsure.
         
-        NBPhoneNumber *unchangedNzNumber = [NZ_NUMBER copy];
+        RingcNBPhoneNumber *unchangedNzNumber = [NZ_NUMBER copy];
         XCTAssertEqual(NBEMatchTypeNSN_MATCH, [_aUtil isNumberMatch:unchangedNzNumber second:@"(64-3) 331 6005"]);
         // Check the phone number proto was not edited during the method call.
         XCTAssertTrue([NZ_NUMBER isEqual:unchangedNzNumber]);
@@ -2726,7 +2726,7 @@
         // assume that the 1 might be a national prefix, so don't remove it when
         // parsing.
         
-        NBPhoneNumber *randomNumber = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *randomNumber = [[RingcNBPhoneNumber alloc] init];
         [randomNumber setCountryCode:@41];
         [randomNumber setNationalNumber:@6502530000];
         XCTAssertEqual(NBEMatchTypeSHORT_NSN_MATCH, [_aUtil isNumberMatch:randomNumber second:@"1-650-253-0000"]);
@@ -2757,12 +2757,12 @@
         XCTAssertEqual(NBEMatchTypeSHORT_NSN_MATCH, [_aUtil isNumberMatch:@"+64 3 331-6005" second:@"3 331 6005#1234"]);
         // One has Italian leading zero, one does not.
         
-        NBPhoneNumber *italianNumberOne = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *italianNumberOne = [[RingcNBPhoneNumber alloc] init];
         [italianNumberOne setCountryCode:@39];
         [italianNumberOne setNationalNumber:@1234];
         [italianNumberOne setItalianLeadingZero:YES];
         
-        NBPhoneNumber *italianNumberTwo = [[NBPhoneNumber alloc] init];
+        RingcNBPhoneNumber *italianNumberTwo = [[RingcNBPhoneNumber alloc] init];
         [italianNumberTwo setCountryCode:@39];
         [italianNumberTwo setNationalNumber:@1234];
         XCTAssertEqual(NBEMatchTypeSHORT_NSN_MATCH, [_aUtil isNumberMatch:italianNumberOne second:italianNumberTwo]);

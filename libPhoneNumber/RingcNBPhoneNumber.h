@@ -5,10 +5,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NBPhoneNumberDefines.h"
+#import "RingcNBPhoneNumberDefines.h"
 
 
-@interface NBPhoneNumber : NSObject <NSCopying, NSCoding>
+@interface RingcNBPhoneNumber : NSObject <NSCopying, NSCoding>
 
 // from phonemetadata.pb.js
 /* 1 */ @property (nonatomic, strong, readwrite) NSNumber *countryCode;

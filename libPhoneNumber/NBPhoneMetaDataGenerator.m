@@ -5,7 +5,7 @@
 //
 
 #import "NBPhoneMetaDataGenerator.h"
-#import "NBPhoneMetaData.h"
+#import "RingcNBPhoneMetaData.h"
 
 #import "NSArray+NBAdditions.h"
 

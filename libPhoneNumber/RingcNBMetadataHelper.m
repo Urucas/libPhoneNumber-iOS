@@ -6,9 +6,9 @@
 //  Copyright (c) 2015년 ohtalk.me. All rights reserved.
 //
 
-#import "NBMetadataHelper.h"
+#import "RingcNBMetadataHelper.h"
 
-#import "NBPhoneMetaData.h"
+#import "RingcNBPhoneMetaData.h"
 
 #import "NBMetadataCoreTest.h"
 #import "NBMetadataCore.h"
@@ -17,12 +17,12 @@
 #import "NBMetadataCoreTestMapper.h"
 
 
-@interface NBMetadataHelper ()
+@interface RingcNBMetadataHelper ()
 
 @end
 
 
-@implementation NBMetadataHelper
+@implementation RingcNBMetadataHelper
 
 /*
  Terminologies
@@ -34,7 +34,7 @@
 static NSMutableDictionary *kMapCCode2CN;
 
 // Cached metadata
-static NBPhoneMetaData *cachedMetaData;
+static RingcNBPhoneMetaData *cachedMetaData;
 static NSString *cachedMetaDataKey;
 
 static BOOL isTestMode = NO;
@@ -118,7 +118,7 @@ static BOOL isTestMode = NO;
             [countryMeta setObject:countryCode forKey:@"code"];
         }
         
-        NBPhoneMetaData *metaData = [NBMetadataHelper getMetadataForRegion:countryCode];
+        RingcNBPhoneMetaData *metaData = [RingcNBMetadataHelper getMetadataForRegion:countryCode];
         if (metaData) {
             [countryMeta setObject:metaData forKey:@"metadata"];
         }
@@ -132,7 +132,7 @@ static BOOL isTestMode = NO;
 
 + (NSArray *)regionCodeFromCountryCode:(NSNumber *)countryCodeNumber
 {
-    [NBMetadataHelper initializeHelper];
+    [RingcNBMetadataHelper initializeHelper];
     
     id res = nil;
     
@@ -152,7 +152,7 @@ static BOOL isTestMode = NO;
 
 + (NSString *)countryCodeFromRegionCode:(NSString* )regionCode
 {
-    [NBMetadataHelper initializeHelper];
+    [RingcNBMetadataHelper initializeHelper];
     
     id res = [kMapCCode2CN objectForKey:regionCode];
     
@@ -168,7 +168,7 @@ static BOOL isTestMode = NO;
 {
     if (aString == nil || aString.length <= 0) return aString;
     
-    aString = [NBMetadataHelper normalizeNonBreakingSpace:aString];
+    aString = [RingcNBMetadataHelper normalizeNonBreakingSpace:aString];
     
     NSString *aRes = @"";
     NSArray *newlines = [aString componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
@@ -202,9 +202,9 @@ static BOOL isTestMode = NO;
  * @param {?string} regionCode
  * @return {i18n.phonenumbers.PhoneMetadata}
  */
-+ (NBPhoneMetaData *)getMetadataForRegion:(NSString *)regionCode
++ (RingcNBPhoneMetaData *)getMetadataForRegion:(NSString *)regionCode
 {
-    [NBMetadataHelper initializeHelper];
+    [RingcNBMetadataHelper initializeHelper];
     
     if ([self hasValue:regionCode] == NO) {
         return nil;
@@ -222,7 +222,7 @@ static BOOL isTestMode = NO;
     Class metaClass = NSClassFromString(className);
     
     if (metaClass) {
-        NBPhoneMetaData *metadata = [[metaClass alloc] init];
+        RingcNBPhoneMetaData *metadata = [[metaClass alloc] init];
         
         cachedMetaData = metadata;
         cachedMetaDataKey = regionCode;
@@ -238,7 +238,7 @@ static BOOL isTestMode = NO;
  * @param {number} countryCallingCode
  * @return {i18n.phonenumbers.PhoneMetadata}
  */
-+ (NBPhoneMetaData *)getMetadataForNonGeographicalRegion:(NSNumber *)countryCallingCode
++ (RingcNBPhoneMetaData *)getMetadataForNonGeographicalRegion:(NSNumber *)countryCallingCode
 {
     NSString *countryCallingCodeStr = [NSString stringWithFormat:@"%@", countryCallingCode];
     return [self getMetadataForRegion:countryCallingCodeStr];

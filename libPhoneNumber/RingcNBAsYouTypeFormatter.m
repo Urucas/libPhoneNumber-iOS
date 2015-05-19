@@ -5,17 +5,17 @@
 //  Created by ishtar on 13. 2. 25..
 //
 
-#import "NBAsYouTypeFormatter.h"
+#import "RingcNBAsYouTypeFormatter.h"
 
-#import "NBMetadataHelper.h"
+#import "RingcNBMetadataHelper.h"
 
-#import "NBPhoneNumberUtil.h"
-#import "NBPhoneMetaData.h"
-#import "NBNumberFormat.h"
+#import "RingcNBPhoneNumberUtil.h"
+#import "RingcNBPhoneMetaData.h"
+#import "RingcNBNumberFormat.h"
 #import "NSArray+NBAdditions.h"
 
 
-@interface NBAsYouTypeFormatter ()
+@interface RingcNBAsYouTypeFormatter ()
 
 @property (nonatomic, strong, readwrite) NSString *DIGIT_PLACEHOLDER_;
 @property (nonatomic, assign, readwrite) NSString *SEPARATOR_BEFORE_NATIONAL_NUMBER_;
@@ -26,16 +26,16 @@
 @property (nonatomic, strong, readwrite) NSRegularExpression *DIGIT_PATTERN_, *NATIONAL_PREFIX_SEPARATORS_PATTERN_, *CHARACTER_CLASS_PATTERN_, *STANDALONE_DIGIT_PATTERN_;
 @property (nonatomic, strong, readwrite) NSRegularExpression *ELIGIBLE_FORMAT_PATTERN_;
 @property (nonatomic, assign, readwrite) BOOL ableToFormat_, inputHasFormatting_, isCompleteNumber_, isExpectingCountryCallingCode_, shouldAddSpaceAfterNationalPrefix_;
-@property (nonatomic, strong, readwrite) NBPhoneNumberUtil *phoneUtil_;
+@property (nonatomic, strong, readwrite) RingcNBPhoneNumberUtil *phoneUtil_;
 @property (nonatomic, assign, readwrite) NSUInteger lastMatchPosition_, originalPosition_, positionToRemember_;
 @property (nonatomic, assign, readwrite) NSUInteger MIN_LEADING_DIGITS_LENGTH_;
 @property (nonatomic, strong, readwrite) NSMutableArray *possibleFormats_;
-@property (nonatomic, strong, readwrite) NBPhoneMetaData *currentMetaData_, *defaultMetaData_, *EMPTY_METADATA_;
+@property (nonatomic, strong, readwrite) RingcNBPhoneMetaData *currentMetaData_, *defaultMetaData_, *EMPTY_METADATA_;
 
 @end
 
 
-@implementation NBAsYouTypeFormatter
+@implementation RingcNBAsYouTypeFormatter
 
 - (id)init
 {
@@ -277,7 +277,7 @@
 		* @private
 		* @type {i18n.phonenumbers.PhoneNumberUtil}
 		*/
-        self.phoneUtil_ = [[NBPhoneNumberUtil alloc] init];
+        self.phoneUtil_ = [[RingcNBPhoneNumberUtil alloc] init];
         self.defaultCountry_ = regionCode;
         self.currentMetaData_ = [self getMetadataForRegion_:self.defaultCountry_];
         /**
@@ -291,7 +291,7 @@
          * @type {i18n.phonenumbers.PhoneMetadata}
          * @private
          */
-        self.EMPTY_METADATA_ = [[NBPhoneMetaData alloc] init];
+        self.EMPTY_METADATA_ = [[RingcNBPhoneMetaData alloc] init];
         [self.EMPTY_METADATA_ setInternationalPrefix:@"NA"];
     }
     
@@ -304,12 +304,12 @@
 	self = [self init];
     
     if (self) {
-        self.phoneUtil_ = [[NBPhoneNumberUtil alloc] init];
+        self.phoneUtil_ = [[RingcNBPhoneNumberUtil alloc] init];
         
         self.defaultCountry_ = regionCode;
         self.currentMetaData_ = [self getMetadataForRegion_:self.defaultCountry_];
         self.defaultMetaData_ = self.currentMetaData_;
-        self.EMPTY_METADATA_ = [[NBPhoneMetaData alloc] init];
+        self.EMPTY_METADATA_ = [[RingcNBPhoneMetaData alloc] init];
         [self.EMPTY_METADATA_ setInternationalPrefix:@"NA"];
     }
     
@@ -324,7 +324,7 @@
  * @return {i18n.phonenumbers.PhoneMetadata} main metadata for this region.
  * @private
  */
-- (NBPhoneMetaData*)getMetadataForRegion_:(NSString*)regionCode
+- (RingcNBPhoneMetaData*)getMetadataForRegion_:(NSString*)regionCode
 {
     
     /** @type {number} */
@@ -332,7 +332,7 @@
     /** @type {string} */
     NSString *mainCountry = [self.phoneUtil_ getRegionCodeForCountryCode:countryCallingCode];
     /** @type {i18n.phonenumbers.PhoneMetadata} */
-    NBPhoneMetaData *metadata = [NBMetadataHelper getMetadataForRegion:mainCountry];
+    RingcNBPhoneMetaData *metadata = [RingcNBMetadataHelper getMetadataForRegion:mainCountry];
     if (metadata != nil) {
         return metadata;
     }
@@ -357,7 +357,7 @@
     for (unsigned int i = 0; i < possibleFormatsLength; ++i)
     {
         /** @type {i18n.phonenumbers.NumberFormat} */
-        NBNumberFormat *numberFormat = [self.possibleFormats_ safeObjectAtIndex:i];
+        RingcNBNumberFormat *numberFormat = [self.possibleFormats_ safeObjectAtIndex:i];
         /** @type {string} */
         NSString *pattern = numberFormat.pattern;
         
@@ -405,7 +405,7 @@
     for (unsigned int i = 0; i < formatListLength; ++i)
     {
         /** @type {i18n.phonenumbers.NumberFormat} */
-        NBNumberFormat *format = [formatList safeObjectAtIndex:i];
+        RingcNBNumberFormat *format = [formatList safeObjectAtIndex:i];
         /** @type {BOOL} */
         BOOL nationalPrefixIsUsedByCountry = (self.currentMetaData_.nationalPrefix && self.currentMetaData_.nationalPrefix.length > 0);
         
@@ -451,7 +451,7 @@
     for (NSUInteger i = 0; i < possibleFormatsLength; ++i)
     {
         /** @type {i18n.phonenumbers.NumberFormat} */
-        NBNumberFormat *format = [self.possibleFormats_ safeObjectAtIndex:i];
+        RingcNBNumberFormat *format = [self.possibleFormats_ safeObjectAtIndex:i];
         if (format.leadingDigitsPatterns.count > indexOfLeadingDigitsPattern)
         {
             /** @type {string} */
@@ -476,7 +476,7 @@
  * @return {BOOL}
  * @private
  */
-- (BOOL)createFormattingTemplate_:(NBNumberFormat*)format
+- (BOOL)createFormattingTemplate_:(RingcNBNumberFormat*)format
 {
     /** @type {string} */
     NSString *numberPattern = format.pattern;
@@ -866,7 +866,7 @@
     for (unsigned int i = 0; i < possibleFormatsLength; ++i)
     {
         /** @type {i18n.phonenumbers.NumberFormat} */
-        NBNumberFormat *numberFormat = self.possibleFormats_[i];
+        RingcNBNumberFormat *numberFormat = self.possibleFormats_[i];
         /** @type {string} */
         NSString * pattern = numberFormat.pattern;
         /** @type {RegExp} */
@@ -1136,7 +1136,7 @@
     NSString *newRegionCode = [self.phoneUtil_ getRegionCodeForCountryCode:countryCode];
     
     if ([NB_REGION_CODE_FOR_NON_GEO_ENTITY isEqualToString:newRegionCode]) {
-        self.currentMetaData_ = [NBMetadataHelper getMetadataForNonGeographicalRegion:countryCode];
+        self.currentMetaData_ = [RingcNBMetadataHelper getMetadataForNonGeographicalRegion:countryCode];
     } else if (newRegionCode != self.defaultCountry_)
     {
         self.currentMetaData_ = [self getMetadataForRegion_:newRegionCode];

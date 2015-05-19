@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface NBAsYouTypeFormatter : NSObject
+@interface RingcNBAsYouTypeFormatter : NSObject
 
 - (id)initWithRegionCode:(NSString *)regionCode;
 - (id)initWithRegionCodeForTest:(NSString *)regionCode;

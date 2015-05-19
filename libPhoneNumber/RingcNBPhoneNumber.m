@@ -4,11 +4,12 @@
 //
 //
 
-#import "NBPhoneNumber.h"
-#import "NBPhoneNumberDefines.h"
+#import "RingcNBPhoneNumber.h"
+
+#import "RingcNBPhoneNumberDefines.h"
 
 
-@implementation NBPhoneNumber
+@implementation RingcNBPhoneNumber
 
 - (id)init
 {
@@ -41,7 +42,7 @@
 }
 
 
-- (BOOL)isEqualToObject:(NBPhoneNumber*)otherObj
+- (BOOL)isEqualToObject:(RingcNBPhoneNumber*)otherObj
 {
     return [self isEqual:otherObj];
 }
@@ -56,11 +57,11 @@
 
 - (BOOL)isEqual:(id)object
 {
-    if (![object isKindOfClass:[NBPhoneNumber class]]) {
+    if (![object isKindOfClass:[RingcNBPhoneNumber class]]) {
         return NO;
     }
     
-    NBPhoneNumber *other = object;
+    RingcNBPhoneNumber *other = object;
     return ([self.countryCode isEqualToNumber:other.countryCode]) && ([self.nationalNumber isEqualToNumber:other.nationalNumber]) &&
         (self.italianLeadingZero == other.italianLeadingZero) &&
         ((self.extension == nil && other.extension == nil) || [self.extension isEqualToString:other.extension]);
@@ -69,7 +70,7 @@
 
 - (id)copyWithZone:(NSZone *)zone
 {
-	NBPhoneNumber *phoneNumberCopy = [[NBPhoneNumber allocWithZone:zone] init];
+	RingcNBPhoneNumber *phoneNumberCopy = [[RingcNBPhoneNumber allocWithZone:zone] init];
     
 	phoneNumberCopy.countryCode = [self.countryCode copy];
     phoneNumberCopy.nationalNumber = [self.nationalNumber copy];

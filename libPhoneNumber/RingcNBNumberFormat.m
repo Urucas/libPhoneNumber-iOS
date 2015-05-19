@@ -4,11 +4,11 @@
 //
 //
 
-#import "NBNumberFormat.h"
+#import "RingcNBNumberFormat.h"
 #import "NSArray+NBAdditions.h"
 
 
-@implementation NBNumberFormat
+@implementation RingcNBNumberFormat
 
 
 - (id)initWithPattern:(NSString *)pattern withFormat:(NSString *)format withLeadingDigitsPatterns:(NSMutableArray *)leadingDigitsPatterns withNationalPrefixFormattingRule:(NSString *)nationalPrefixFormattingRule whenFormatting:(BOOL)nationalPrefixOptionalWhenFormatting withDomesticCarrierCodeFormattingRule:(NSString *)domesticCarrierCodeFormattingRule
@@ -48,7 +48,7 @@
 
 - (id)copyWithZone:(NSZone *)zone
 {
-	NBNumberFormat *phoneFormatCopy = [[NBNumberFormat allocWithZone:zone] init];
+	RingcNBNumberFormat *phoneFormatCopy = [[RingcNBNumberFormat allocWithZone:zone] init];
     
     /*
      1 @property (nonatomic, strong, readwrite) NSString *pattern;

@@ -4,11 +4,11 @@
 //
 //
 
-#import "NBPhoneNumberDesc.h"
+#import "RingcNBPhoneNumberDesc.h"
 #import "NSArray+NBAdditions.h"
 
 
-@implementation NBPhoneNumberDesc
+@implementation RingcNBPhoneNumberDesc
 
 - (id)initWithData:(id)data
 {
@@ -80,7 +80,7 @@
 
 - (id)copyWithZone:(NSZone *)zone
 {
-	NBPhoneNumberDesc *phoneDescCopy = [[NBPhoneNumberDesc allocWithZone:zone] init];
+	RingcNBPhoneNumberDesc *phoneDescCopy = [[RingcNBPhoneNumberDesc allocWithZone:zone] init];
     
     phoneDescCopy.nationalNumberPattern = [self.nationalNumberPattern copy];
     phoneDescCopy.possibleNumberPattern = [self.possibleNumberPattern copy];
@@ -92,11 +92,11 @@
 
 - (BOOL)isEqual:(id)object
 {
-    if ([object isKindOfClass:[NBPhoneNumberDesc class]] == NO) {
+    if ([object isKindOfClass:[RingcNBPhoneNumberDesc class]] == NO) {
         return NO;
     }
     
-    NBPhoneNumberDesc *other = object;
+    RingcNBPhoneNumberDesc *other = object;
     return [self.nationalNumberPattern isEqual:other.nationalNumberPattern] &&
         [self.possibleNumberPattern isEqual:other.possibleNumberPattern] &&
         [self.exampleNumber isEqual:other.exampleNumber];

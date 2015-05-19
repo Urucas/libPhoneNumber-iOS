@@ -6,8 +6,8 @@
 //
 
 #import "NBAsYouTypeFormatterTest.h"
-#import "NBAsYouTypeFormatter.h"
-#import "NBMetadataHelper.h"
+#import "RingcNBAsYouTypeFormatter.h"
+#import "RingcNBMetadataHelper.h"
 
 @implementation NBAsYouTypeFormatterTest
 
@@ -15,7 +15,7 @@
 {
     [super setUp];
     
-    [NBMetadataHelper setTestMode:YES];
+    [RingcNBMetadataHelper setTestMode:YES];
 }
 
 - (void)tearDown
@@ -30,7 +30,7 @@
     //testInvalidRegion()
     {
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"ZZ"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"ZZ"];
         XCTAssertEqualObjects(@"+", [f inputDigit:@"+"]);
         XCTAssertEqualObjects(@"+4", [f inputDigit:@"4"]);
         XCTAssertEqualObjects(@"+48 ", [f inputDigit:@"8"]);
@@ -54,7 +54,7 @@
     //testInvalidPlusSign()
     {
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"ZZ"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"ZZ"];
         XCTAssertEqualObjects(@"+", [f inputDigit:@"+"]);
         XCTAssertEqualObjects(@"+4", [f inputDigit:@"4"]);
         XCTAssertEqualObjects(@"+48 ", [f inputDigit:@"8"]);
@@ -88,7 +88,7 @@
         // The bug occurred last time for countries which have two formatting rules
         // with exactly the same leading digits pattern but differ in length.
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"ZZ"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"ZZ"];
         XCTAssertEqualObjects(@"+", [f inputDigit:@"+"]);
         XCTAssertEqualObjects(@"+8", [f inputDigit:@"8"]);
         XCTAssertEqualObjects(@"+81 ", [f inputDigit:@"1"]);
@@ -110,7 +110,7 @@
     // testCountryWithSpaceInNationalPrefixFormattingRule()
     {
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"BY"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"BY"];
         XCTAssertEqualObjects(@"8", [f inputDigit:@"8"]);
         XCTAssertEqualObjects(@"88", [f inputDigit:@"8"]);
         XCTAssertEqualObjects(@"881", [f inputDigit:@"1"]);
@@ -127,7 +127,7 @@
     // testCountryWithSpaceInNationalPrefixFormattingRuleAndLongNdd()
     {
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"BY"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"BY"];
         XCTAssertEqualObjects(@"9", [f inputDigit:@"9"]);
         XCTAssertEqualObjects(@"99", [f inputDigit:@"9"]);
         XCTAssertEqualObjects(@"999", [f inputDigit:@"9"]);
@@ -143,7 +143,7 @@
     // testAYTFUS()
     {
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"US"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"US"];
         XCTAssertEqualObjects(@"6", [f inputDigit:@"6"]);
         XCTAssertEqualObjects(@"65", [f inputDigit:@"5"]);
         XCTAssertEqualObjects(@"650", [f inputDigit:@"0"]);
@@ -239,7 +239,7 @@
     //testAYTFUSFullWidthCharacters()
     {
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"US"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"US"];
         XCTAssertEqualObjects(@"\uFF16", [f inputDigit:@"\uFF16"]);
         XCTAssertEqualObjects(@"\uFF16\uFF15", [f inputDigit:@"\uFF15"]);
         XCTAssertEqualObjects(@"650", [f inputDigit:@"\uFF10"]);
@@ -255,7 +255,7 @@
     // testAYTFUSMobileShortCode()
     {
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"US"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"US"];
         XCTAssertEqualObjects(@"*", [f inputDigit:@"*"]);
         XCTAssertEqualObjects(@"*1", [f inputDigit:@"1"]);
         XCTAssertEqualObjects(@"*12", [f inputDigit:@"2"]);
@@ -266,7 +266,7 @@
     // testAYTFUSVanityNumber()
     {
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"US"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"US"];
         XCTAssertEqualObjects(@"8", [f inputDigit:@"8"]);
         XCTAssertEqualObjects(@"80", [f inputDigit:@"0"]);
         XCTAssertEqualObjects(@"800", [f inputDigit:@"0"]);
@@ -284,7 +284,7 @@
     // testAYTFAndRememberPositionUS()
     {
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"US"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"US"];
         XCTAssertEqualObjects(@"1", [f inputDigitAndRememberPosition:@"1"]);
         XCTAssertEqual(1, [f getRememberedPosition]);
         XCTAssertEqualObjects(@"16", [f inputDigit:@"6"]);
@@ -422,7 +422,7 @@
     // testAYTFGBFixedLine()
     {
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"GB"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"GB"];
         XCTAssertEqualObjects(@"0", [f inputDigit:@"0"]);
         XCTAssertEqualObjects(@"02", [f inputDigit:@"2"]);
         XCTAssertEqualObjects(@"020", [f inputDigit:@"0"]);
@@ -441,7 +441,7 @@
     // testAYTFGBTollFree()
     {
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"GB"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"GB"];
         XCTAssertEqualObjects(@"0", [f inputDigit:@"0"]);
         XCTAssertEqualObjects(@"08", [f inputDigit:@"8"]);
         XCTAssertEqualObjects(@"080", [f inputDigit:@"0"]);
@@ -458,7 +458,7 @@
     // testAYTFGBPremiumRate()
     {
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"GB"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"GB"];
         XCTAssertEqualObjects(@"0", [f inputDigit:@"0"]);
         XCTAssertEqualObjects(@"09", [f inputDigit:@"9"]);
         XCTAssertEqualObjects(@"090", [f inputDigit:@"0"]);
@@ -475,7 +475,7 @@
     // testAYTFNZMobile()
     {
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"NZ"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"NZ"];
         XCTAssertEqualObjects(@"0", [f inputDigit:@"0"]);
         XCTAssertEqualObjects(@"02", [f inputDigit:@"2"]);
         XCTAssertEqualObjects(@"021", [f inputDigit:@"1"]);
@@ -492,7 +492,7 @@
     // testAYTFDE()
     {
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"DE"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"DE"];
         XCTAssertEqualObjects(@"0", [f inputDigit:@"0"]);
         XCTAssertEqualObjects(@"03", [f inputDigit:@"3"]);
         XCTAssertEqualObjects(@"030", [f inputDigit:@"0"]);
@@ -545,7 +545,7 @@
     // testAYTFAR()
     {
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"AR"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"AR"];
         XCTAssertEqualObjects(@"0", [f inputDigit:@"0"]);
         XCTAssertEqualObjects(@"01", [f inputDigit:@"1"]);
         XCTAssertEqualObjects(@"011", [f inputDigit:@"1"]);
@@ -562,7 +562,7 @@
     // testAYTFARMobile()
     {
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"AR"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"AR"];
         XCTAssertEqualObjects(@"+", [f inputDigit:@"+"]);
         XCTAssertEqualObjects(@"+5", [f inputDigit:@"5"]);
         XCTAssertEqualObjects(@"+54 ", [f inputDigit:@"4"]);
@@ -583,7 +583,7 @@
     {
         // +82 51 234 5678
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"KR"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"KR"];
         XCTAssertEqualObjects(@"+", [f inputDigit:@"+"]);
         XCTAssertEqualObjects(@"+8", [f inputDigit:@"8"]);
         XCTAssertEqualObjects(@"+82 ", [f inputDigit:@"2"]);
@@ -674,7 +674,7 @@
     // testAYTF_MX()
     {
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"MX"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"MX"];
         
         // +52 800 123 4567
         XCTAssertEqualObjects(@"+", [f inputDigit:@"+"]);
@@ -761,7 +761,7 @@
     // testAYTF_International_Toll_Free()
     {
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"US"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"US"];
         // +800 1234 5678
         XCTAssertEqualObjects(@"+", [f inputDigit:@"+"]);
         XCTAssertEqualObjects(@"+8", [f inputDigit:@"8"]);
@@ -782,7 +782,7 @@
     {
         // +81 50 2345 6789
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"JP"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"JP"];
         XCTAssertEqualObjects(@"+", [f inputDigit:@"+"]);
         XCTAssertEqualObjects(@"+8", [f inputDigit:@"8"]);
         XCTAssertEqualObjects(@"+81 ", [f inputDigit:@"1"]);
@@ -840,7 +840,7 @@
     // testAYTFLongIDD_AU()
     {
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"AU"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"AU"];
         // 0011 1 650 253 2250
         XCTAssertEqualObjects(@"0", [f inputDigit:@"0"]);
         XCTAssertEqualObjects(@"00", [f inputDigit:@"0"]);
@@ -899,7 +899,7 @@
     // testAYTFLongIDD_KR()
     {
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"KR"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"KR"];
         // 00300 1 650 253 2222
         XCTAssertEqualObjects(@"0", [f inputDigit:@"0"]);
         XCTAssertEqualObjects(@"00", [f inputDigit:@"0"]);
@@ -922,7 +922,7 @@
     // testAYTFLongNDD_KR()
     {
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"KR"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"KR"];
         // 08811-9876-7890
         XCTAssertEqualObjects(@"0", [f inputDigit:@"0"]);
         XCTAssertEqualObjects(@"08", [f inputDigit:@"8"]);
@@ -960,7 +960,7 @@
     // testAYTFLongNDD_SG()
     {
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"SG"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"SG"];
         // 777777 9876 7890
         XCTAssertEqualObjects(@"7", [f inputDigit:@"7"]);
         XCTAssertEqualObjects(@"77", [f inputDigit:@"7"]);
@@ -982,7 +982,7 @@
     {
         // For Australia, the national prefix is not optional when formatting.
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"AU"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"AU"];
         
         // 1234567890 - For leading digit 1, the national prefix formatting rule has
         // first group only.
@@ -1060,7 +1060,7 @@
         // For Korea, the national prefix is not optional when formatting, and the
         // national prefix formatting rule doesn't consist of only the first group.
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"KR"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"KR"];
         
         // 111
         XCTAssertEqualObjects(@"1", [f inputDigit:@"1"]);
@@ -1103,7 +1103,7 @@
     // testAYTFShortNumberFormattingFix_MX()
     {
         // For Mexico, the national prefix is optional when formatting.
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"MX"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"MX"];
         
         // 911
         XCTAssertEqualObjects(@"9", [f inputDigit:@"9"]);
@@ -1144,7 +1144,7 @@
     // testAYTFNoNationalPrefix()
     {
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"IT"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"IT"];
         XCTAssertEqualObjects(@"3", [f inputDigit:@"3"]);
         XCTAssertEqualObjects(@"33", [f inputDigit:@"3"]);
         XCTAssertEqualObjects(@"333", [f inputDigit:@"3"]);
@@ -1157,7 +1157,7 @@
     {
         // For the US, an initial 1 is treated specially.
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"US"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"US"];
         
         // 101 - Test that the initial 1 is not treated as a national prefix.
         XCTAssertEqualObjects(@"1", [f inputDigit:@"1"]);
@@ -1180,7 +1180,7 @@
     // testAYTFDescription()
     {
         /** @type {i18n.phonenumbers.AsYouTypeFormatter} */
-        NBAsYouTypeFormatter *f = [[NBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"US"];
+        RingcNBAsYouTypeFormatter *f = [[RingcNBAsYouTypeFormatter alloc] initWithRegionCodeForTest:@"US"];
         
         [f inputDigit:@"1"];
         [f inputDigit:@"6"];

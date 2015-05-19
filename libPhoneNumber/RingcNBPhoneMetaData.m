@@ -4,13 +4,13 @@
 //
 //
 
-#import "NBPhoneMetaData.h"
-#import "NBPhoneNumberDesc.h"
-#import "NBNumberFormat.h"
+#import "RingcNBPhoneMetaData.h"
+#import "RingcNBPhoneNumberDesc.h"
+#import "RingcNBNumberFormat.h"
 #import "NSArray+NBAdditions.h"
 
 
-@implementation NBPhoneMetaData
+@implementation RingcNBPhoneMetaData
 
 
 - (id)init

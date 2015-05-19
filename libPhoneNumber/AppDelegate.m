@@ -7,7 +7,7 @@
 #import "AppDelegate.h"
 #import "NBPhoneMetaDataGenerator.h"
 
-#import "NBPhoneNumberUtil.h"
+#import "RingcNBPhoneNumberUtil.h"
 
 @implementation AppDelegate
 

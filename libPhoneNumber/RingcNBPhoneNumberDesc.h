@@ -7,7 +7,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface NBPhoneNumberDesc : NSObject
+@interface RingcNBPhoneNumberDesc : NSObject
 
 // from phonemetadata.pb.js
 /* 2 */ @property (nonatomic, strong, readwrite) NSString *nationalNumberPattern;

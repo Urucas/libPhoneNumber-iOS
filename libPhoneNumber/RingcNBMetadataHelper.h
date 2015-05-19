@@ -7,19 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NBPhoneNumberDefines.h"
+#import "RingcNBPhoneNumberDefines.h"
 
 
-@class NBPhoneMetaData;
+@class RingcNBPhoneMetaData;
 
-@interface NBMetadataHelper : NSObject
+@interface RingcNBMetadataHelper : NSObject
 
 + (void)setTestMode:(BOOL)isMode;
 
 + (NSArray *)getAllMetadata;
 
-+ (NBPhoneMetaData *)getMetadataForNonGeographicalRegion:(NSNumber *)countryCallingCode;
-+ (NBPhoneMetaData *)getMetadataForRegion:(NSString *)regionCode;
++ (RingcNBPhoneMetaData *)getMetadataForNonGeographicalRegion:(NSNumber *)countryCallingCode;
++ (RingcNBPhoneMetaData *)getMetadataForRegion:(NSString *)regionCode;
 
 + (NSArray *)regionCodeFromCountryCode:(NSNumber *)countryCodeNumber;
 + (NSString *)countryCodeFromRegionCode:(NSString *)regionCode;
