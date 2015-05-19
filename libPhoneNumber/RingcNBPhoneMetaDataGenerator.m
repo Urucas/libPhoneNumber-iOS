@@ -1,10 +1,10 @@
 //
-//  NBPhoneMetaDataGenerator.m
+//  RingcNBPhoneMetaDataGenerator.m
 //  libPhoneNumber
 //
 //
 
-#import "NBPhoneMetaDataGenerator.h"
+#import "RingcNBPhoneMetaDataGenerator.h"
 #import "RingcNBPhoneMetaData.h"
 
 #import "NSArray+NBAdditions.h"
@@ -14,10 +14,10 @@
 #define STR_VAL(val) [self stringForSourceCode:val]
 #define NUM_VAL(val) [self numberForSourceCode:val]
 
-NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+NSString *ringc_letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 
-@implementation NBPhoneMetaDataGenerator
+@implementation RingcNBPhoneMetaDataGenerator
 
 
 - (id)init
@@ -54,8 +54,8 @@ NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         NSDictionary *mappedRealData = [self mappingObject:realMetadata];
         NSDictionary *mappedTestData = [self mappingObject:testMetadata];
         
-        [self createClassWithDictionary:mappedRealData name:@"NBMetadataCore" isTestData:NO];
-        [self createClassWithDictionary:mappedTestData name:@"NBMetadataCoreTest" isTestData:YES];
+        [self createClassWithDictionary:mappedRealData name:@"RingcNBMetadataCore" isTestData:NO];
+        [self createClassWithDictionary:mappedTestData name:@"RingcNBMetadataCoreTest" isTestData:YES];
     } @catch (NSException *exception) {
         NSLog(@"Error for creating metadata classes : %@", exception.reason);
     }
@@ -110,7 +110,7 @@ NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     NSMutableString *randomString = [NSMutableString stringWithCapacity: len];
     
     for (int i=0; i<len; i++) {
-        [randomString appendFormat: @"%C", [letters characterAtIndex: arc4random() % [letters length]]];
+        [randomString appendFormat: @"%C", [ringc_letters characterAtIndex: arc4random() % [ringc_letters length]]];
     }
     
     return randomString;
@@ -168,7 +168,7 @@ NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 - (NSString *)generateSourceCodeWith:(NSDictionary*)data name:(NSString*)name type:(int)type isTestData:(BOOL)isTest
 {
-    NSString *classPrefix = isTest ? @"NBPhoneMetadataTest" : @"NBPhoneMetadata";
+    NSString *classPrefix = isTest ? @"RingcNBPhoneMetadataTest" : @"RingcNBPhoneMetadata";
     
     NSMutableString *contents = [[NSMutableString alloc] init];
     
@@ -178,11 +178,11 @@ NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         NSArray *allKeys = metadata.allKeys;
         
         [contents appendString:@"#import <Foundation/Foundation.h>\n"];
-        [contents appendString:@"#import \"NBPhoneMetaData.h\"\n\n"];
+        [contents appendString:@"#import \"RingcNBPhoneMetaData.h\"\n\n"];
         
         for (NSString *key in allKeys) {
             NSString *className = [NSString stringWithFormat:@"%@%@", classPrefix, key];
-            [contents appendFormat:@"@interface %@ : NBPhoneMetaData\n", className];
+            [contents appendFormat:@"@interface %@ : RingcNBPhoneMetaData\n", className];
             [contents appendString:@"@end\n\n"];
         }
         
@@ -190,9 +190,9 @@ NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         NSArray *allKeys = metadata.allKeys;
         
         [contents appendFormat:@"#import \"%@.h\"\n", name];
-        [contents appendString:@"#import \"NBPhoneNumberDefines.h\"\n"];
-        [contents appendString:@"#import \"NBPhoneNumberDesc.h\"\n\n"];
-        [contents appendString:@"#import \"NBNumberFormat.h\"\n\n"];
+        [contents appendString:@"#import \"RingcNBPhoneNumberDefines.h\"\n"];
+        [contents appendString:@"#import \"RingcNBPhoneNumberDesc.h\"\n\n"];
+        [contents appendString:@"#import \"RingcNBNumberFormat.h\"\n\n"];
         
         for (NSString *key in allKeys) {
             NSArray *currentMetadata = [metadata objectForKey:key];
@@ -318,7 +318,7 @@ NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 - (NSString *)phoneNumberDescWithData:(id)value
 {
-    NSString *initSentance = [NSString stringWithFormat:@"[[NBPhoneNumberDesc alloc] initWithNationalNumberPattern:%@ withPossibleNumberPattern:%@ withExample:%@]",
+    NSString *initSentance = [NSString stringWithFormat:@"[[RingcNBPhoneNumberDesc alloc] initWithNationalNumberPattern:%@ withPossibleNumberPattern:%@ withExample:%@]",
                               STR_VAL([value safeObjectAtIndex:2]), STR_VAL([value safeObjectAtIndex:3]), STR_VAL([value safeObjectAtIndex:6])];
     return initSentance;
 }
@@ -352,7 +352,7 @@ NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
             }
         }
         
-        NSString *initSentance = [NSString stringWithFormat:@"        NBNumberFormat *%@ = [[NBNumberFormat alloc] initWithPattern:%@ withFormat:%@ withLeadingDigitsPatterns:%@ withNationalPrefixFormattingRule:%@ whenFormatting:%@ withDomesticCarrierCodeFormattingRule:%@];\n",
+        NSString *initSentance = [NSString stringWithFormat:@"        RingcNBNumberFormat *%@ = [[RingcNBNumberFormat alloc] initWithPattern:%@ withFormat:%@ withLeadingDigitsPatterns:%@ withNationalPrefixFormattingRule:%@ whenFormatting:%@ withDomesticCarrierCodeFormattingRule:%@];\n",
                                   varName, STR_VAL(pattern), STR_VAL(format), arrayName, STR_VAL(nationalPrefixFormattingRule),
                                   nationalPrefixOptionalWhenFormatting ? @"YES":@"NO", STR_VAL(domesticCarrierCodeFormattingRule)];
         

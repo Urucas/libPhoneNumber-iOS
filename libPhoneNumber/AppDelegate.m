@@ -5,7 +5,7 @@
 //
 
 #import "AppDelegate.h"
-#import "NBPhoneMetaDataGenerator.h"
+#import "RingcNBPhoneMetaDataGenerator.h"
 
 #import "RingcNBPhoneNumberUtil.h"
 
@@ -17,7 +17,7 @@
     self.window.backgroundColor = [UIColor blackColor];
     [self.window makeKeyAndVisible];
     
-    NBPhoneMetaDataGenerator *generator = [[NBPhoneMetaDataGenerator alloc] init];
+    RingcNBPhoneMetaDataGenerator *generator = [[RingcNBPhoneMetaDataGenerator alloc] init];
     [generator generateMetadataClasses];
 
     /* 

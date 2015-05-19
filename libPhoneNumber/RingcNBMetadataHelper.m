@@ -13,8 +13,8 @@
 #import "NBMetadataCoreTest.h"
 #import "NBMetadataCore.h"
 
-#import "NBMetadataCoreMapper.h"
-#import "NBMetadataCoreTestMapper.h"
+#import "RingcNBMetadataCoreMapper.h"
+#import "RingcNBMetadataCoreTestMapper.h"
 
 
 @interface RingcNBMetadataHelper ()
@@ -137,9 +137,9 @@ static BOOL isTestMode = NO;
     id res = nil;
     
     if (isTestMode) {
-        res = [NBMetadataCoreTestMapper ISOCodeFromCallingNumber:[countryCodeNumber stringValue]];
+        res = [RingcNBMetadataCoreTestMapper ISOCodeFromCallingNumber:[countryCodeNumber stringValue]];
     } else {
-        res = [NBMetadataCoreMapper ISOCodeFromCallingNumber:[countryCodeNumber stringValue]];
+        res = [RingcNBMetadataCoreMapper ISOCodeFromCallingNumber:[countryCodeNumber stringValue]];
     }
     
     if (res && [res isKindOfClass:[NSArray class]] && [((NSArray*)res) count] > 0) {

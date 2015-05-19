@@ -1,6 +1,6 @@
-#import "NBMetadataCoreMapper.h"
+#import "RingcNBMetadataCoreMapper.h"
 
-@implementation NBMetadataCoreMapper
+@implementation RingcNBMetadataCoreMapper
 
 static NSMutableDictionary *kMapCCode2CN;
 

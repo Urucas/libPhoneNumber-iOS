@@ -1,762 +1,762 @@
 #import <Foundation/Foundation.h>
 #import "RingcNBPhoneMetaData.h"
 
-@interface NBPhoneMetadataIM : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataIM : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataHR : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataHR : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataGW : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataGW : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataIN : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataIN : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataKE : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataKE : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataLA : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataLA : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataIO : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataIO : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataHT : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataHT : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataGY : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataGY : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataLB : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataLB : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataKG : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataKG : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataHU : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataHU : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataLC : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataLC : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataIQ : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataIQ : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataKH : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataKH : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataJM : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataJM : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataIR : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataIR : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataKI : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataKI : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataIS : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataIS : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataMA : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataMA : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataJO : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataJO : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataIT : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataIT : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataJP : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataJP : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataMC : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataMC : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataKM : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataKM : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataMD : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataMD : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataLI : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataLI : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadata881 : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadata881 : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataKN : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataKN : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataME : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataME : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataNA : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataNA : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataMF : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataMF : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataLK : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataLK : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadata882 : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadata882 : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataKP : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataKP : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataMG : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataMG : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataNC : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataNC : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataMH : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataMH : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadata883 : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadata883 : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataKR : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataKR : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataNE : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataNE : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataNF : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataNF : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataMK : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataMK : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataNG : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataNG : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataML : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataML : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataMM : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataMM : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataLR : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataLR : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataNI : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataNI : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataKW : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataKW : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataMN : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataMN : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataLS : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataLS : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataPA : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataPA : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataMO : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataMO : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataLT : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataLT : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataKY : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataKY : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataMP : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataMP : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataLU : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataLU : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataNL : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataNL : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataKZ : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataKZ : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataMQ : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataMQ : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadata888 : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadata888 : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataLV : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataLV : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataMR : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataMR : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataPE : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataPE : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataMS : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataMS : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataQA : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataQA : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataNO : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataNO : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataPF : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataPF : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataMT : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataMT : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataLY : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataLY : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataNP : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataNP : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataPG : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataPG : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataMU : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataMU : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataPH : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataPH : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataMV : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataMV : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataOM : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataOM : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataNR : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataNR : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataMW : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataMW : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataMX : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataMX : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataPK : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataPK : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataMY : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataMY : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataNU : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataNU : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataPL : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataPL : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataMZ : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataMZ : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataPM : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataPM : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataRE : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataRE : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataSA : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataSA : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataSB : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataSB : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataNZ : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataNZ : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataSC : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataSC : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataSD : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataSD : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataPR : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataPR : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataSE : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataSE : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataPS : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataPS : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTA : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTA : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataPT : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataPT : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataSG : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataSG : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTC : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTC : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataSH : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataSH : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTD : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTD : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataSI : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataSI : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataPW : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataPW : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataSJ : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataSJ : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataUA : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataUA : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataRO : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataRO : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataSK : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataSK : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataPY : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataPY : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTG : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTG : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataSL : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataSL : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTH : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTH : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataSM : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataSM : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataSN : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataSN : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataRS : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataRS : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTJ : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTJ : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataVA : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataVA : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataSO : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataSO : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTK : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTK : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataUG : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataUG : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataRU : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataRU : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTL : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTL : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataVC : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataVC : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadata870 : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadata870 : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTM : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTM : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataSR : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataSR : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataRW : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataRW : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTN : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTN : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataVE : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataVE : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataSS : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataSS : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTO : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTO : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataST : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataST : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataVG : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataVG : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataSV : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataSV : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTR : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTR : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataVI : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataVI : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataSX : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataSX : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataWF : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataWF : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTT : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTT : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataSY : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataSY : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataSZ : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataSZ : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTV : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTV : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTW : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTW : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataVN : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataVN : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataUS : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataUS : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTZ : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTZ : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadata878 : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadata878 : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataYE : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataYE : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataZA : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataZA : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataUY : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataUY : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataVU : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataVU : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataUZ : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataUZ : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataWS : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataWS : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadata979 : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadata979 : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataZM : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataZM : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataAC : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataAC : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataAD : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataAD : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataYT : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataYT : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataAE : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataAE : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataBA : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataBA : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataAF : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataAF : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataBB : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataBB : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataAG : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataAG : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataBD : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataBD : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataAI : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataAI : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataBE : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataBE : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataCA : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataCA : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataBF : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataBF : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataBG : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataBG : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataZW : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataZW : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataAL : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataAL : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataCC : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataCC : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataBH : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataBH : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataAM : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataAM : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataCD : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataCD : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataBI : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataBI : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataBJ : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataBJ : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataAO : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataAO : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataCF : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataCF : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataCG : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataCG : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataBL : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataBL : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadata800 : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadata800 : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataCH : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataCH : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataBM : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataBM : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataAR : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataAR : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataCI : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataCI : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataBN : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataBN : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataDE : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataDE : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataAS : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataAS : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataBO : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataBO : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataAT : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataAT : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataCK : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataCK : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataAU : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataAU : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataCL : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataCL : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataEC : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataEC : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataBQ : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataBQ : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataCM : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataCM : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataBR : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataBR : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataAW : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataAW : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataCN : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataCN : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataEE : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataEE : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataBS : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataBS : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataDJ : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataDJ : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataAX : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataAX : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataCO : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataCO : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataBT : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataBT : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataDK : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataDK : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataEG : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataEG : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataAZ : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataAZ : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataEH : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataEH : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataDM : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataDM : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataCR : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataCR : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataBW : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataBW : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataGA : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataGA : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataDO : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataDO : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataBY : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataBY : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataGB : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataGB : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataCU : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataCU : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataBZ : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataBZ : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataCV : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataCV : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadata808 : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadata808 : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataGD : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataGD : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataFI : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataFI : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataCW : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataCW : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataGE : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataGE : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataFJ : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataFJ : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataCX : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataCX : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataGF : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataGF : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataFK : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataFK : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataCY : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataCY : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataGG : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataGG : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataCZ : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataCZ : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataGH : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataGH : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataFM : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataFM : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataER : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataER : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataGI : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataGI : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataES : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataES : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataFO : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataFO : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataET : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataET : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataGL : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataGL : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataDZ : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataDZ : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataGM : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataGM : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataID : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataID : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataFR : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataFR : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataGN : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataGN : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataIE : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataIE : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataHK : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataHK : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataGP : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataGP : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataGQ : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataGQ : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataGR : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataGR : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataHN : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataHN : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataJE : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataJE : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataGT : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataGT : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataGU : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataGU : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataIL : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataIL : RingcNBPhoneMetaData
 @end
 

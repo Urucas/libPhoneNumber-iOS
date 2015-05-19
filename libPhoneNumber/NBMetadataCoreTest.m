@@ -4,7 +4,7 @@
 
 #import "RingcNBNumberFormat.h"
 
-@implementation NBPhoneMetadataTestAD
+@implementation RingcNBPhoneMetadataTestAD
 - (id)init
 {
     self = [super init];
@@ -45,7 +45,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTestBR
+@implementation RingcNBPhoneMetadataTestBR
 - (id)init
 {
     self = [super init];
@@ -86,7 +86,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTestAU
+@implementation RingcNBPhoneMetadataTestAU
 - (id)init
 {
     self = [super init];
@@ -137,7 +137,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTestBB
+@implementation RingcNBPhoneMetadataTestBB
 - (id)init
 {
     self = [super init];
@@ -178,7 +178,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTestAE
+@implementation RingcNBPhoneMetadataTestAE
 - (id)init
 {
     self = [super init];
@@ -219,7 +219,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTestCX
+@implementation RingcNBPhoneMetadataTestCX
 - (id)init
 {
     self = [super init];
@@ -260,7 +260,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTestBS
+@implementation RingcNBPhoneMetadataTestBS
 - (id)init
 {
     self = [super init];
@@ -301,7 +301,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTestDE
+@implementation RingcNBPhoneMetadataTestDE
 - (id)init
 {
     self = [super init];
@@ -374,7 +374,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTestKR
+@implementation RingcNBPhoneMetadataTestKR
 - (id)init
 {
     self = [super init];
@@ -487,7 +487,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTestNZ
+@implementation RingcNBPhoneMetadataTestNZ
 - (id)init
 {
     self = [super init];
@@ -543,7 +543,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTestPL
+@implementation RingcNBPhoneMetadataTestPL
 - (id)init
 {
     self = [super init];
@@ -588,7 +588,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTestYT
+@implementation RingcNBPhoneMetadataTestYT
 - (id)init
 {
     self = [super init];
@@ -629,7 +629,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTestCA
+@implementation RingcNBPhoneMetadataTestCA
 - (id)init
 {
     self = [super init];
@@ -670,7 +670,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTestAO
+@implementation RingcNBPhoneMetadataTestAO
 - (id)init
 {
     self = [super init];
@@ -715,7 +715,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTest800
+@implementation RingcNBPhoneMetadataTest800
 - (id)init
 {
     self = [super init];
@@ -760,7 +760,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTestFR
+@implementation RingcNBPhoneMetadataTestFR
 - (id)init
 {
     self = [super init];
@@ -806,7 +806,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTestGG
+@implementation RingcNBPhoneMetadataTestGG
 - (id)init
 {
     self = [super init];
@@ -847,7 +847,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTestHU
+@implementation RingcNBPhoneMetadataTestHU
 - (id)init
 {
     self = [super init];
@@ -888,7 +888,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTestSG
+@implementation RingcNBPhoneMetadataTestSG
 - (id)init
 {
     self = [super init];
@@ -944,7 +944,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTestJP
+@implementation RingcNBPhoneMetadataTestJP
 - (id)init
 {
     self = [super init];
@@ -1025,7 +1025,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTestCC
+@implementation RingcNBPhoneMetadataTestCC
 - (id)init
 {
     self = [super init];
@@ -1066,7 +1066,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTestMX
+@implementation RingcNBPhoneMetadataTestMX
 - (id)init
 {
     self = [super init];
@@ -1157,7 +1157,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTestUS
+@implementation RingcNBPhoneMetadataTestUS
 - (id)init
 {
     self = [super init];
@@ -1210,7 +1210,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTestIT
+@implementation RingcNBPhoneMetadataTestIT
 - (id)init
 {
     self = [super init];
@@ -1271,7 +1271,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTestAR
+@implementation RingcNBPhoneMetadataTestAR
 - (id)init
 {
     self = [super init];
@@ -1362,7 +1362,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTest979
+@implementation RingcNBPhoneMetadataTest979
 - (id)init
 {
     self = [super init];
@@ -1407,7 +1407,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTestGB
+@implementation RingcNBPhoneMetadataTestGB
 - (id)init
 {
     self = [super init];
@@ -1468,7 +1468,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTestBY
+@implementation RingcNBPhoneMetadataTestBY
 - (id)init
 {
     self = [super init];
@@ -1524,7 +1524,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTestCN
+@implementation RingcNBPhoneMetadataTestCN
 - (id)init
 {
     self = [super init];
@@ -1572,7 +1572,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTestRE
+@implementation RingcNBPhoneMetadataTestRE
 - (id)init
 {
     self = [super init];

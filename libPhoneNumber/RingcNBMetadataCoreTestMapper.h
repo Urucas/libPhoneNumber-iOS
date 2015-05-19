@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface NBMetadataCoreMapper : NSObject
+@interface RingcNBMetadataCoreTestMapper : NSObject
 
 + (NSArray *)ISOCodeFromCallingNumber:(NSString *)key;
 

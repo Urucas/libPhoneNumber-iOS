@@ -4,7 +4,7 @@
 
 #import "RingcNBNumberFormat.h"
 
-@implementation NBPhoneMetadataIM
+@implementation RingcNBPhoneMetadataIM
 - (id)init
 {
     self = [super init];
@@ -45,7 +45,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataHR
+@implementation RingcNBPhoneMetadataHR
 - (id)init
 {
     self = [super init];
@@ -141,7 +141,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataGW
+@implementation RingcNBPhoneMetadataGW
 - (id)init
 {
     self = [super init];
@@ -186,7 +186,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataIN
+@implementation RingcNBPhoneMetadataIN
 - (id)init
 {
     self = [super init];
@@ -288,7 +288,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataKE
+@implementation RingcNBPhoneMetadataKE
 - (id)init
 {
     self = [super init];
@@ -344,7 +344,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataLA
+@implementation RingcNBPhoneMetadataLA
 - (id)init
 {
     self = [super init];
@@ -400,7 +400,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataIO
+@implementation RingcNBPhoneMetadataIO
 - (id)init
 {
     self = [super init];
@@ -445,7 +445,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataHT
+@implementation RingcNBPhoneMetadataHT
 - (id)init
 {
     self = [super init];
@@ -490,7 +490,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataGY
+@implementation RingcNBPhoneMetadataGY
 - (id)init
 {
     self = [super init];
@@ -535,7 +535,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataLB
+@implementation RingcNBPhoneMetadataLB
 - (id)init
 {
     self = [super init];
@@ -586,7 +586,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataKG
+@implementation RingcNBPhoneMetadataKG
 - (id)init
 {
     self = [super init];
@@ -642,7 +642,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataHU
+@implementation RingcNBPhoneMetadataHU
 - (id)init
 {
     self = [super init];
@@ -693,7 +693,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataLC
+@implementation RingcNBPhoneMetadataLC
 - (id)init
 {
     self = [super init];
@@ -734,7 +734,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataIQ
+@implementation RingcNBPhoneMetadataIQ
 - (id)init
 {
     self = [super init];
@@ -790,7 +790,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataKH
+@implementation RingcNBPhoneMetadataKH
 - (id)init
 {
     self = [super init];
@@ -841,7 +841,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataJM
+@implementation RingcNBPhoneMetadataJM
 - (id)init
 {
     self = [super init];
@@ -882,7 +882,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataIR
+@implementation RingcNBPhoneMetadataIR
 - (id)init
 {
     self = [super init];
@@ -948,7 +948,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataKI
+@implementation RingcNBPhoneMetadataKI
 - (id)init
 {
     self = [super init];
@@ -989,7 +989,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataIS
+@implementation RingcNBPhoneMetadataIS
 - (id)init
 {
     self = [super init];
@@ -1040,7 +1040,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataMA
+@implementation RingcNBPhoneMetadataMA
 - (id)init
 {
     self = [super init];
@@ -1103,7 +1103,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataJO
+@implementation RingcNBPhoneMetadataJO
 - (id)init
 {
     self = [super init];
@@ -1159,7 +1159,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataIT
+@implementation RingcNBPhoneMetadataIT
 - (id)init
 {
     self = [super init];
@@ -1253,7 +1253,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataJP
+@implementation RingcNBPhoneMetadataJP
 - (id)init
 {
     self = [super init];
@@ -1433,7 +1433,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataMC
+@implementation RingcNBPhoneMetadataMC
 - (id)init
 {
     self = [super init];
@@ -1494,7 +1494,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataKM
+@implementation RingcNBPhoneMetadataKM
 - (id)init
 {
     self = [super init];
@@ -1539,7 +1539,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataMD
+@implementation RingcNBPhoneMetadataMD
 - (id)init
 {
     self = [super init];
@@ -1595,7 +1595,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataLI
+@implementation RingcNBPhoneMetadataLI
 - (id)init
 {
     self = [super init];
@@ -1666,7 +1666,7 @@
 }
 @end
 
-@implementation NBPhoneMetadata881
+@implementation RingcNBPhoneMetadata881
 - (id)init
 {
     self = [super init];
@@ -1712,7 +1712,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataKN
+@implementation RingcNBPhoneMetadataKN
 - (id)init
 {
     self = [super init];
@@ -1753,7 +1753,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataME
+@implementation RingcNBPhoneMetadataME
 - (id)init
 {
     self = [super init];
@@ -1806,7 +1806,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataNA
+@implementation RingcNBPhoneMetadataNA
 - (id)init
 {
     self = [super init];
@@ -1867,7 +1867,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataMF
+@implementation RingcNBPhoneMetadataMF
 - (id)init
 {
     self = [super init];
@@ -1908,7 +1908,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataLK
+@implementation RingcNBPhoneMetadataLK
 - (id)init
 {
     self = [super init];
@@ -1959,7 +1959,7 @@
 }
 @end
 
-@implementation NBPhoneMetadata882
+@implementation RingcNBPhoneMetadata882
 - (id)init
 {
     self = [super init];
@@ -2035,7 +2035,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataKP
+@implementation RingcNBPhoneMetadataKP
 - (id)init
 {
     self = [super init];
@@ -2091,7 +2091,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataMG
+@implementation RingcNBPhoneMetadataMG
 - (id)init
 {
     self = [super init];
@@ -2136,7 +2136,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataNC
+@implementation RingcNBPhoneMetadataNC
 - (id)init
 {
     self = [super init];
@@ -2182,7 +2182,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataMH
+@implementation RingcNBPhoneMetadataMH
 - (id)init
 {
     self = [super init];
@@ -2227,7 +2227,7 @@
 }
 @end
 
-@implementation NBPhoneMetadata883
+@implementation RingcNBPhoneMetadata883
 - (id)init
 {
     self = [super init];
@@ -2283,7 +2283,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataKR
+@implementation RingcNBPhoneMetadataKR
 - (id)init
 {
     self = [super init];
@@ -2380,7 +2380,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataNE
+@implementation RingcNBPhoneMetadataNE
 - (id)init
 {
     self = [super init];
@@ -2431,7 +2431,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataNF
+@implementation RingcNBPhoneMetadataNF
 - (id)init
 {
     self = [super init];
@@ -2482,7 +2482,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataMK
+@implementation RingcNBPhoneMetadataMK
 - (id)init
 {
     self = [super init];
@@ -2538,7 +2538,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataNG
+@implementation RingcNBPhoneMetadataNG
 - (id)init
 {
     self = [super init];
@@ -2609,7 +2609,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataML
+@implementation RingcNBPhoneMetadataML
 - (id)init
 {
     self = [super init];
@@ -2665,7 +2665,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataMM
+@implementation RingcNBPhoneMetadataMM
 - (id)init
 {
     self = [super init];
@@ -2746,7 +2746,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataLR
+@implementation RingcNBPhoneMetadataLR
 - (id)init
 {
     self = [super init];
@@ -2807,7 +2807,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataNI
+@implementation RingcNBPhoneMetadataNI
 - (id)init
 {
     self = [super init];
@@ -2852,7 +2852,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataKW
+@implementation RingcNBPhoneMetadataKW
 - (id)init
 {
     self = [super init];
@@ -2903,7 +2903,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataMN
+@implementation RingcNBPhoneMetadataMN
 - (id)init
 {
     self = [super init];
@@ -2971,7 +2971,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataLS
+@implementation RingcNBPhoneMetadataLS
 - (id)init
 {
     self = [super init];
@@ -3016,7 +3016,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataPA
+@implementation RingcNBPhoneMetadataPA
 - (id)init
 {
     self = [super init];
@@ -3067,7 +3067,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataMO
+@implementation RingcNBPhoneMetadataMO
 - (id)init
 {
     self = [super init];
@@ -3112,7 +3112,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataLT
+@implementation RingcNBPhoneMetadataLT
 - (id)init
 {
     self = [super init];
@@ -3173,7 +3173,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataKY
+@implementation RingcNBPhoneMetadataKY
 - (id)init
 {
     self = [super init];
@@ -3214,7 +3214,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataMP
+@implementation RingcNBPhoneMetadataMP
 - (id)init
 {
     self = [super init];
@@ -3255,7 +3255,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataLU
+@implementation RingcNBPhoneMetadataLU
 - (id)init
 {
     self = [super init];
@@ -3341,7 +3341,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataNL
+@implementation RingcNBPhoneMetadataNL
 - (id)init
 {
     self = [super init];
@@ -3412,7 +3412,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataKZ
+@implementation RingcNBPhoneMetadataKZ
 - (id)init
 {
     self = [super init];
@@ -3453,7 +3453,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataMQ
+@implementation RingcNBPhoneMetadataMQ
 - (id)init
 {
     self = [super init];
@@ -3498,7 +3498,7 @@
 }
 @end
 
-@implementation NBPhoneMetadata888
+@implementation RingcNBPhoneMetadata888
 - (id)init
 {
     self = [super init];
@@ -3543,7 +3543,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataLV
+@implementation RingcNBPhoneMetadataLV
 - (id)init
 {
     self = [super init];
@@ -3588,7 +3588,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataMR
+@implementation RingcNBPhoneMetadataMR
 - (id)init
 {
     self = [super init];
@@ -3633,7 +3633,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataPE
+@implementation RingcNBPhoneMetadataPE
 - (id)init
 {
     self = [super init];
@@ -3694,7 +3694,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataMS
+@implementation RingcNBPhoneMetadataMS
 - (id)init
 {
     self = [super init];
@@ -3735,7 +3735,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataQA
+@implementation RingcNBPhoneMetadataQA
 - (id)init
 {
     self = [super init];
@@ -3786,7 +3786,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataNO
+@implementation RingcNBPhoneMetadataNO
 - (id)init
 {
     self = [super init];
@@ -3837,7 +3837,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataPF
+@implementation RingcNBPhoneMetadataPF
 - (id)init
 {
     self = [super init];
@@ -3888,7 +3888,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataMT
+@implementation RingcNBPhoneMetadataMT
 - (id)init
 {
     self = [super init];
@@ -3933,7 +3933,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataLY
+@implementation RingcNBPhoneMetadataLY
 - (id)init
 {
     self = [super init];
@@ -3978,7 +3978,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataNP
+@implementation RingcNBPhoneMetadataNP
 - (id)init
 {
     self = [super init];
@@ -4034,7 +4034,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataPG
+@implementation RingcNBPhoneMetadataPG
 - (id)init
 {
     self = [super init];
@@ -4085,7 +4085,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataMU
+@implementation RingcNBPhoneMetadataMU
 - (id)init
 {
     self = [super init];
@@ -4136,7 +4136,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataPH
+@implementation RingcNBPhoneMetadataPH
 - (id)init
 {
     self = [super init];
@@ -4219,7 +4219,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataMV
+@implementation RingcNBPhoneMetadataMV
 - (id)init
 {
     self = [super init];
@@ -4270,7 +4270,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataOM
+@implementation RingcNBPhoneMetadataOM
 - (id)init
 {
     self = [super init];
@@ -4326,7 +4326,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataNR
+@implementation RingcNBPhoneMetadataNR
 - (id)init
 {
     self = [super init];
@@ -4371,7 +4371,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataMW
+@implementation RingcNBPhoneMetadataMW
 - (id)init
 {
     self = [super init];
@@ -4427,7 +4427,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataMX
+@implementation RingcNBPhoneMetadataMX
 - (id)init
 {
     self = [super init];
@@ -4508,7 +4508,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataPK
+@implementation RingcNBPhoneMetadataPK
 - (id)init
 {
     self = [super init];
@@ -4595,7 +4595,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataMY
+@implementation RingcNBPhoneMetadataMY
 - (id)init
 {
     self = [super init];
@@ -4666,7 +4666,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataNU
+@implementation RingcNBPhoneMetadataNU
 - (id)init
 {
     self = [super init];
@@ -4707,7 +4707,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataPL
+@implementation RingcNBPhoneMetadataPL
 - (id)init
 {
     self = [super init];
@@ -4773,7 +4773,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataMZ
+@implementation RingcNBPhoneMetadataMZ
 - (id)init
 {
     self = [super init];
@@ -4824,7 +4824,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataPM
+@implementation RingcNBPhoneMetadataPM
 - (id)init
 {
     self = [super init];
@@ -4869,7 +4869,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataRE
+@implementation RingcNBPhoneMetadataRE
 - (id)init
 {
     self = [super init];
@@ -4914,7 +4914,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataSA
+@implementation RingcNBPhoneMetadataSA
 - (id)init
 {
     self = [super init];
@@ -4985,7 +4985,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataSB
+@implementation RingcNBPhoneMetadataSB
 - (id)init
 {
     self = [super init];
@@ -5031,7 +5031,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataNZ
+@implementation RingcNBPhoneMetadataNZ
 - (id)init
 {
     self = [super init];
@@ -5104,7 +5104,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataSC
+@implementation RingcNBPhoneMetadataSC
 - (id)init
 {
     self = [super init];
@@ -5155,7 +5155,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataSD
+@implementation RingcNBPhoneMetadataSD
 - (id)init
 {
     self = [super init];
@@ -5200,7 +5200,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataPR
+@implementation RingcNBPhoneMetadataPR
 - (id)init
 {
     self = [super init];
@@ -5241,7 +5241,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataSE
+@implementation RingcNBPhoneMetadataSE
 - (id)init
 {
     self = [super init];
@@ -5382,7 +5382,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataPS
+@implementation RingcNBPhoneMetadataPS
 - (id)init
 {
     self = [super init];
@@ -5438,7 +5438,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTA
+@implementation RingcNBPhoneMetadataTA
 - (id)init
 {
     self = [super init];
@@ -5479,7 +5479,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataPT
+@implementation RingcNBPhoneMetadataPT
 - (id)init
 {
     self = [super init];
@@ -5530,7 +5530,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataSG
+@implementation RingcNBPhoneMetadataSG
 - (id)init
 {
     self = [super init];
@@ -5591,7 +5591,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTC
+@implementation RingcNBPhoneMetadataTC
 - (id)init
 {
     self = [super init];
@@ -5632,7 +5632,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataSH
+@implementation RingcNBPhoneMetadataSH
 - (id)init
 {
     self = [super init];
@@ -5673,7 +5673,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTD
+@implementation RingcNBPhoneMetadataTD
 - (id)init
 {
     self = [super init];
@@ -5718,7 +5718,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataSI
+@implementation RingcNBPhoneMetadataSI
 - (id)init
 {
     self = [super init];
@@ -5779,7 +5779,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataPW
+@implementation RingcNBPhoneMetadataPW
 - (id)init
 {
     self = [super init];
@@ -5824,7 +5824,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataSJ
+@implementation RingcNBPhoneMetadataSJ
 - (id)init
 {
     self = [super init];
@@ -5865,7 +5865,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataUA
+@implementation RingcNBPhoneMetadataUA
 - (id)init
 {
     self = [super init];
@@ -5924,7 +5924,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataRO
+@implementation RingcNBPhoneMetadataRO
 - (id)init
 {
     self = [super init];
@@ -5985,7 +5985,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataSK
+@implementation RingcNBPhoneMetadataSK
 - (id)init
 {
     self = [super init];
@@ -6041,7 +6041,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataPY
+@implementation RingcNBPhoneMetadataPY
 - (id)init
 {
     self = [super init];
@@ -6107,7 +6107,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTG
+@implementation RingcNBPhoneMetadataTG
 - (id)init
 {
     self = [super init];
@@ -6152,7 +6152,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataSL
+@implementation RingcNBPhoneMetadataSL
 - (id)init
 {
     self = [super init];
@@ -6197,7 +6197,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTH
+@implementation RingcNBPhoneMetadataTH
 - (id)init
 {
     self = [super init];
@@ -6253,7 +6253,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataSM
+@implementation RingcNBPhoneMetadataSM
 - (id)init
 {
     self = [super init];
@@ -6324,7 +6324,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataSN
+@implementation RingcNBPhoneMetadataSN
 - (id)init
 {
     self = [super init];
@@ -6375,7 +6375,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataRS
+@implementation RingcNBPhoneMetadataRS
 - (id)init
 {
     self = [super init];
@@ -6446,7 +6446,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTJ
+@implementation RingcNBPhoneMetadataTJ
 - (id)init
 {
     self = [super init];
@@ -6511,7 +6511,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataVA
+@implementation RingcNBPhoneMetadataVA
 - (id)init
 {
     self = [super init];
@@ -6556,7 +6556,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataSO
+@implementation RingcNBPhoneMetadataSO
 - (id)init
 {
     self = [super init];
@@ -6622,7 +6622,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTK
+@implementation RingcNBPhoneMetadataTK
 - (id)init
 {
     self = [super init];
@@ -6663,7 +6663,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataUG
+@implementation RingcNBPhoneMetadataUG
 - (id)init
 {
     self = [super init];
@@ -6719,7 +6719,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataRU
+@implementation RingcNBPhoneMetadataRU
 - (id)init
 {
     self = [super init];
@@ -6785,7 +6785,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTL
+@implementation RingcNBPhoneMetadataTL
 - (id)init
 {
     self = [super init];
@@ -6836,7 +6836,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataVC
+@implementation RingcNBPhoneMetadataVC
 - (id)init
 {
     self = [super init];
@@ -6877,7 +6877,7 @@
 }
 @end
 
-@implementation NBPhoneMetadata870
+@implementation RingcNBPhoneMetadata870
 - (id)init
 {
     self = [super init];
@@ -6922,7 +6922,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTM
+@implementation RingcNBPhoneMetadataTM
 - (id)init
 {
     self = [super init];
@@ -6978,7 +6978,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataSR
+@implementation RingcNBPhoneMetadataSR
 - (id)init
 {
     self = [super init];
@@ -7034,7 +7034,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataRW
+@implementation RingcNBPhoneMetadataRW
 - (id)init
 {
     self = [super init];
@@ -7090,7 +7090,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTN
+@implementation RingcNBPhoneMetadataTN
 - (id)init
 {
     self = [super init];
@@ -7135,7 +7135,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataVE
+@implementation RingcNBPhoneMetadataVE
 - (id)init
 {
     self = [super init];
@@ -7180,7 +7180,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataSS
+@implementation RingcNBPhoneMetadataSS
 - (id)init
 {
     self = [super init];
@@ -7225,7 +7225,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTO
+@implementation RingcNBPhoneMetadataTO
 - (id)init
 {
     self = [super init];
@@ -7281,7 +7281,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataST
+@implementation RingcNBPhoneMetadataST
 - (id)init
 {
     self = [super init];
@@ -7326,7 +7326,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataVG
+@implementation RingcNBPhoneMetadataVG
 - (id)init
 {
     self = [super init];
@@ -7367,7 +7367,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataSV
+@implementation RingcNBPhoneMetadataSV
 - (id)init
 {
     self = [super init];
@@ -7423,7 +7423,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTR
+@implementation RingcNBPhoneMetadataTR
 - (id)init
 {
     self = [super init];
@@ -7479,7 +7479,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataVI
+@implementation RingcNBPhoneMetadataVI
 - (id)init
 {
     self = [super init];
@@ -7520,7 +7520,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataSX
+@implementation RingcNBPhoneMetadataSX
 - (id)init
 {
     self = [super init];
@@ -7561,7 +7561,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataWF
+@implementation RingcNBPhoneMetadataWF
 - (id)init
 {
     self = [super init];
@@ -7606,7 +7606,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTT
+@implementation RingcNBPhoneMetadataTT
 - (id)init
 {
     self = [super init];
@@ -7647,7 +7647,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataSY
+@implementation RingcNBPhoneMetadataSY
 - (id)init
 {
     self = [super init];
@@ -7698,7 +7698,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataSZ
+@implementation RingcNBPhoneMetadataSZ
 - (id)init
 {
     self = [super init];
@@ -7744,7 +7744,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTV
+@implementation RingcNBPhoneMetadataTV
 - (id)init
 {
     self = [super init];
@@ -7785,7 +7785,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTW
+@implementation RingcNBPhoneMetadataTW
 - (id)init
 {
     self = [super init];
@@ -7841,7 +7841,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataVN
+@implementation RingcNBPhoneMetadataVN
 - (id)init
 {
     self = [super init];
@@ -7927,7 +7927,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataUS
+@implementation RingcNBPhoneMetadataUS
 - (id)init
 {
     self = [super init];
@@ -7980,7 +7980,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataTZ
+@implementation RingcNBPhoneMetadataTZ
 - (id)init
 {
     self = [super init];
@@ -8036,7 +8036,7 @@
 }
 @end
 
-@implementation NBPhoneMetadata878
+@implementation RingcNBPhoneMetadata878
 - (id)init
 {
     self = [super init];
@@ -8081,7 +8081,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataYE
+@implementation RingcNBPhoneMetadataYE
 - (id)init
 {
     self = [super init];
@@ -8132,7 +8132,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataZA
+@implementation RingcNBPhoneMetadataZA
 - (id)init
 {
     self = [super init];
@@ -8193,7 +8193,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataUY
+@implementation RingcNBPhoneMetadataUY
 - (id)init
 {
     self = [super init];
@@ -8249,7 +8249,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataVU
+@implementation RingcNBPhoneMetadataVU
 - (id)init
 {
     self = [super init];
@@ -8295,7 +8295,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataUZ
+@implementation RingcNBPhoneMetadataUZ
 - (id)init
 {
     self = [super init];
@@ -8340,7 +8340,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataWS
+@implementation RingcNBPhoneMetadataWS
 - (id)init
 {
     self = [super init];
@@ -8391,7 +8391,7 @@
 }
 @end
 
-@implementation NBPhoneMetadata979
+@implementation RingcNBPhoneMetadata979
 - (id)init
 {
     self = [super init];
@@ -8436,7 +8436,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataZM
+@implementation RingcNBPhoneMetadataZM
 - (id)init
 {
     self = [super init];
@@ -8487,7 +8487,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataAC
+@implementation RingcNBPhoneMetadataAC
 - (id)init
 {
     self = [super init];
@@ -8528,7 +8528,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataAD
+@implementation RingcNBPhoneMetadataAD
 - (id)init
 {
     self = [super init];
@@ -8579,7 +8579,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataYT
+@implementation RingcNBPhoneMetadataYT
 - (id)init
 {
     self = [super init];
@@ -8620,7 +8620,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataAE
+@implementation RingcNBPhoneMetadataAE
 - (id)init
 {
     self = [super init];
@@ -8681,7 +8681,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataBA
+@implementation RingcNBPhoneMetadataBA
 - (id)init
 {
     self = [super init];
@@ -8737,7 +8737,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataAF
+@implementation RingcNBPhoneMetadataAF
 - (id)init
 {
     self = [super init];
@@ -8788,7 +8788,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataBB
+@implementation RingcNBPhoneMetadataBB
 - (id)init
 {
     self = [super init];
@@ -8829,7 +8829,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataAG
+@implementation RingcNBPhoneMetadataAG
 - (id)init
 {
     self = [super init];
@@ -8870,7 +8870,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataBD
+@implementation RingcNBPhoneMetadataBD
 - (id)init
 {
     self = [super init];
@@ -8931,7 +8931,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataAI
+@implementation RingcNBPhoneMetadataAI
 - (id)init
 {
     self = [super init];
@@ -8972,7 +8972,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataBE
+@implementation RingcNBPhoneMetadataBE
 - (id)init
 {
     self = [super init];
@@ -9033,7 +9033,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataCA
+@implementation RingcNBPhoneMetadataCA
 - (id)init
 {
     self = [super init];
@@ -9074,7 +9074,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataBF
+@implementation RingcNBPhoneMetadataBF
 - (id)init
 {
     self = [super init];
@@ -9119,7 +9119,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataBG
+@implementation RingcNBPhoneMetadataBG
 - (id)init
 {
     self = [super init];
@@ -9195,7 +9195,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataZW
+@implementation RingcNBPhoneMetadataZW
 - (id)init
 {
     self = [super init];
@@ -9288,7 +9288,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataAL
+@implementation RingcNBPhoneMetadataAL
 - (id)init
 {
     self = [super init];
@@ -9349,7 +9349,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataCC
+@implementation RingcNBPhoneMetadataCC
 - (id)init
 {
     self = [super init];
@@ -9390,7 +9390,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataBH
+@implementation RingcNBPhoneMetadataBH
 - (id)init
 {
     self = [super init];
@@ -9435,7 +9435,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataAM
+@implementation RingcNBPhoneMetadataAM
 - (id)init
 {
     self = [super init];
@@ -9496,7 +9496,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataCD
+@implementation RingcNBPhoneMetadataCD
 - (id)init
 {
     self = [super init];
@@ -9557,7 +9557,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataBI
+@implementation RingcNBPhoneMetadataBI
 - (id)init
 {
     self = [super init];
@@ -9602,7 +9602,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataBJ
+@implementation RingcNBPhoneMetadataBJ
 - (id)init
 {
     self = [super init];
@@ -9647,7 +9647,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataAO
+@implementation RingcNBPhoneMetadataAO
 - (id)init
 {
     self = [super init];
@@ -9692,7 +9692,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataCF
+@implementation RingcNBPhoneMetadataCF
 - (id)init
 {
     self = [super init];
@@ -9737,7 +9737,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataCG
+@implementation RingcNBPhoneMetadataCG
 - (id)init
 {
     self = [super init];
@@ -9788,7 +9788,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataBL
+@implementation RingcNBPhoneMetadataBL
 - (id)init
 {
     self = [super init];
@@ -9829,7 +9829,7 @@
 }
 @end
 
-@implementation NBPhoneMetadata800
+@implementation RingcNBPhoneMetadata800
 - (id)init
 {
     self = [super init];
@@ -9874,7 +9874,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataCH
+@implementation RingcNBPhoneMetadataCH
 - (id)init
 {
     self = [super init];
@@ -9930,7 +9930,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataBM
+@implementation RingcNBPhoneMetadataBM
 - (id)init
 {
     self = [super init];
@@ -9971,7 +9971,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataAR
+@implementation RingcNBPhoneMetadataAR
 - (id)init
 {
     self = [super init];
@@ -10108,7 +10108,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataCI
+@implementation RingcNBPhoneMetadataCI
 - (id)init
 {
     self = [super init];
@@ -10153,7 +10153,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataBN
+@implementation RingcNBPhoneMetadataBN
 - (id)init
 {
     self = [super init];
@@ -10198,7 +10198,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataDE
+@implementation RingcNBPhoneMetadataDE
 - (id)init
 {
     self = [super init];
@@ -10320,7 +10320,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataAS
+@implementation RingcNBPhoneMetadataAS
 - (id)init
 {
     self = [super init];
@@ -10361,7 +10361,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataBO
+@implementation RingcNBPhoneMetadataBO
 - (id)init
 {
     self = [super init];
@@ -10412,7 +10412,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataAT
+@implementation RingcNBPhoneMetadataAT
 - (id)init
 {
     self = [super init];
@@ -10483,7 +10483,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataCK
+@implementation RingcNBPhoneMetadataCK
 - (id)init
 {
     self = [super init];
@@ -10528,7 +10528,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataAU
+@implementation RingcNBPhoneMetadataAU
 - (id)init
 {
     self = [super init];
@@ -10611,7 +10611,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataCL
+@implementation RingcNBPhoneMetadataCL
 - (id)init
 {
     self = [super init];
@@ -10737,7 +10737,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataEC
+@implementation RingcNBPhoneMetadataEC
 - (id)init
 {
     self = [super init];
@@ -10808,7 +10808,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataBQ
+@implementation RingcNBPhoneMetadataBQ
 - (id)init
 {
     self = [super init];
@@ -10849,7 +10849,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataCM
+@implementation RingcNBPhoneMetadataCM
 - (id)init
 {
     self = [super init];
@@ -10905,7 +10905,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataBR
+@implementation RingcNBPhoneMetadataBR
 - (id)init
 {
     self = [super init];
@@ -11001,7 +11001,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataAW
+@implementation RingcNBPhoneMetadataAW
 - (id)init
 {
     self = [super init];
@@ -11046,7 +11046,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataCN
+@implementation RingcNBPhoneMetadataCN
 - (id)init
 {
     self = [super init];
@@ -11213,7 +11213,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataEE
+@implementation RingcNBPhoneMetadataEE
 - (id)init
 {
     self = [super init];
@@ -11277,7 +11277,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataBS
+@implementation RingcNBPhoneMetadataBS
 - (id)init
 {
     self = [super init];
@@ -11318,7 +11318,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataDJ
+@implementation RingcNBPhoneMetadataDJ
 - (id)init
 {
     self = [super init];
@@ -11363,7 +11363,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataAX
+@implementation RingcNBPhoneMetadataAX
 - (id)init
 {
     self = [super init];
@@ -11404,7 +11404,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataCO
+@implementation RingcNBPhoneMetadataCO
 - (id)init
 {
     self = [super init];
@@ -11479,7 +11479,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataBT
+@implementation RingcNBPhoneMetadataBT
 - (id)init
 {
     self = [super init];
@@ -11530,7 +11530,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataDK
+@implementation RingcNBPhoneMetadataDK
 - (id)init
 {
     self = [super init];
@@ -11575,7 +11575,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataEG
+@implementation RingcNBPhoneMetadataEG
 - (id)init
 {
     self = [super init];
@@ -11631,7 +11631,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataAZ
+@implementation RingcNBPhoneMetadataAZ
 - (id)init
 {
     self = [super init];
@@ -11687,7 +11687,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataEH
+@implementation RingcNBPhoneMetadataEH
 - (id)init
 {
     self = [super init];
@@ -11728,7 +11728,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataDM
+@implementation RingcNBPhoneMetadataDM
 - (id)init
 {
     self = [super init];
@@ -11769,7 +11769,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataCR
+@implementation RingcNBPhoneMetadataCR
 - (id)init
 {
     self = [super init];
@@ -11820,7 +11820,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataBW
+@implementation RingcNBPhoneMetadataBW
 - (id)init
 {
     self = [super init];
@@ -11876,7 +11876,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataGA
+@implementation RingcNBPhoneMetadataGA
 - (id)init
 {
     self = [super init];
@@ -11927,7 +11927,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataDO
+@implementation RingcNBPhoneMetadataDO
 - (id)init
 {
     self = [super init];
@@ -11968,7 +11968,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataBY
+@implementation RingcNBPhoneMetadataBY
 - (id)init
 {
     self = [super init];
@@ -12037,7 +12037,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataGB
+@implementation RingcNBPhoneMetadataGB
 - (id)init
 {
     self = [super init];
@@ -12139,7 +12139,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataCU
+@implementation RingcNBPhoneMetadataCU
 - (id)init
 {
     self = [super init];
@@ -12195,7 +12195,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataBZ
+@implementation RingcNBPhoneMetadataBZ
 - (id)init
 {
     self = [super init];
@@ -12246,7 +12246,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataCV
+@implementation RingcNBPhoneMetadataCV
 - (id)init
 {
     self = [super init];
@@ -12291,7 +12291,7 @@
 }
 @end
 
-@implementation NBPhoneMetadata808
+@implementation RingcNBPhoneMetadata808
 - (id)init
 {
     self = [super init];
@@ -12336,7 +12336,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataGD
+@implementation RingcNBPhoneMetadataGD
 - (id)init
 {
     self = [super init];
@@ -12377,7 +12377,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataFI
+@implementation RingcNBPhoneMetadataFI
 - (id)init
 {
     self = [super init];
@@ -12433,7 +12433,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataCW
+@implementation RingcNBPhoneMetadataCW
 - (id)init
 {
     self = [super init];
@@ -12484,7 +12484,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataGE
+@implementation RingcNBPhoneMetadataGE
 - (id)init
 {
     self = [super init];
@@ -12540,7 +12540,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataFJ
+@implementation RingcNBPhoneMetadataFJ
 - (id)init
 {
     self = [super init];
@@ -12591,7 +12591,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataCX
+@implementation RingcNBPhoneMetadataCX
 - (id)init
 {
     self = [super init];
@@ -12632,7 +12632,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataGF
+@implementation RingcNBPhoneMetadataGF
 - (id)init
 {
     self = [super init];
@@ -12677,7 +12677,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataFK
+@implementation RingcNBPhoneMetadataFK
 - (id)init
 {
     self = [super init];
@@ -12718,7 +12718,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataCY
+@implementation RingcNBPhoneMetadataCY
 - (id)init
 {
     self = [super init];
@@ -12763,7 +12763,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataGG
+@implementation RingcNBPhoneMetadataGG
 - (id)init
 {
     self = [super init];
@@ -12804,7 +12804,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataCZ
+@implementation RingcNBPhoneMetadataCZ
 - (id)init
 {
     self = [super init];
@@ -12860,7 +12860,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataGH
+@implementation RingcNBPhoneMetadataGH
 - (id)init
 {
     self = [super init];
@@ -12911,7 +12911,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataFM
+@implementation RingcNBPhoneMetadataFM
 - (id)init
 {
     self = [super init];
@@ -12956,7 +12956,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataER
+@implementation RingcNBPhoneMetadataER
 - (id)init
 {
     self = [super init];
@@ -13001,7 +13001,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataGI
+@implementation RingcNBPhoneMetadataGI
 - (id)init
 {
     self = [super init];
@@ -13047,7 +13047,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataES
+@implementation RingcNBPhoneMetadataES
 - (id)init
 {
     self = [super init];
@@ -13093,7 +13093,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataFO
+@implementation RingcNBPhoneMetadataFO
 - (id)init
 {
     self = [super init];
@@ -13138,7 +13138,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataET
+@implementation RingcNBPhoneMetadataET
 - (id)init
 {
     self = [super init];
@@ -13183,7 +13183,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataGL
+@implementation RingcNBPhoneMetadataGL
 - (id)init
 {
     self = [super init];
@@ -13228,7 +13228,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataDZ
+@implementation RingcNBPhoneMetadataDZ
 - (id)init
 {
     self = [super init];
@@ -13284,7 +13284,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataGM
+@implementation RingcNBPhoneMetadataGM
 - (id)init
 {
     self = [super init];
@@ -13329,7 +13329,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataID
+@implementation RingcNBPhoneMetadataID
 - (id)init
 {
     self = [super init];
@@ -13400,7 +13400,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataFR
+@implementation RingcNBPhoneMetadataFR
 - (id)init
 {
     self = [super init];
@@ -13466,7 +13466,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataGN
+@implementation RingcNBPhoneMetadataGN
 - (id)init
 {
     self = [super init];
@@ -13517,7 +13517,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataIE
+@implementation RingcNBPhoneMetadataIE
 - (id)init
 {
     self = [super init];
@@ -13604,7 +13604,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataHK
+@implementation RingcNBPhoneMetadataHK
 - (id)init
 {
     self = [super init];
@@ -13665,7 +13665,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataGP
+@implementation RingcNBPhoneMetadataGP
 - (id)init
 {
     self = [super init];
@@ -13710,7 +13710,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataGQ
+@implementation RingcNBPhoneMetadataGQ
 - (id)init
 {
     self = [super init];
@@ -13761,7 +13761,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataGR
+@implementation RingcNBPhoneMetadataGR
 - (id)init
 {
     self = [super init];
@@ -13817,7 +13817,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataHN
+@implementation RingcNBPhoneMetadataHN
 - (id)init
 {
     self = [super init];
@@ -13862,7 +13862,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataJE
+@implementation RingcNBPhoneMetadataJE
 - (id)init
 {
     self = [super init];
@@ -13903,7 +13903,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataGT
+@implementation RingcNBPhoneMetadataGT
 - (id)init
 {
     self = [super init];
@@ -13954,7 +13954,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataGU
+@implementation RingcNBPhoneMetadataGU
 - (id)init
 {
     self = [super init];
@@ -13995,7 +13995,7 @@
 }
 @end
 
-@implementation NBPhoneMetadataIL
+@implementation RingcNBPhoneMetadataIL
 - (id)init
 {
     self = [super init];

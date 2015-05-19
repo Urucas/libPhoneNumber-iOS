@@ -1,93 +1,93 @@
 #import <Foundation/Foundation.h>
 #import "RingcNBPhoneMetaData.h"
 
-@interface NBPhoneMetadataTestAD : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTestAD : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTestBR : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTestBR : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTestAU : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTestAU : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTestBB : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTestBB : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTestAE : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTestAE : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTestCX : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTestCX : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTestBS : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTestBS : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTestDE : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTestDE : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTestKR : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTestKR : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTestNZ : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTestNZ : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTestPL : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTestPL : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTestYT : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTestYT : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTestCA : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTestCA : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTestAO : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTestAO : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTest800 : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTest800 : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTestFR : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTestFR : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTestGG : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTestGG : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTestHU : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTestHU : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTestSG : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTestSG : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTestJP : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTestJP : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTestCC : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTestCC : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTestMX : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTestMX : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTestUS : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTestUS : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTestIT : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTestIT : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTestAR : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTestAR : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTest979 : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTest979 : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTestGB : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTestGB : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTestBY : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTestBY : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTestCN : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTestCN : RingcNBPhoneMetaData
 @end
 
-@interface NBPhoneMetadataTestRE : RingcNBPhoneMetaData
+@interface RingcNBPhoneMetadataTestRE : RingcNBPhoneMetaData
 @end
 

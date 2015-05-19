@@ -7,7 +7,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface NBPhoneMetaDataGenerator : NSObject
+@interface RingcNBPhoneMetaDataGenerator : NSObject
 
 - (void)generateMetadataClasses;
 
