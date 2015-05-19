@@ -216,7 +216,7 @@ static BOOL isTestMode = NO;
         return cachedMetaData;
     }
     
-    NSString *classPrefix = isTestMode ? @"NBPhoneMetadataTest" : @"NBPhoneMetadata";
+    NSString *classPrefix = isTestMode ? @"RingcNBPhoneMetadataTest" : @"RingcNBPhoneMetadata";
     NSString *className = [NSString stringWithFormat:@"%@%@", classPrefix, regionCode];
     
     Class metaClass = NSClassFromString(className);
